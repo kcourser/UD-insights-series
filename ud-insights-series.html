@@ -1,0 +1,739 @@
+<!-- ============================================================
+     UPRT+ Insights Series Browser — Upright Digital
+     Interactive Substack series intro (not a full reader)
+     Flow: series cards → horizontal article rail → summary panel → Substack
+     Brand tokens: v7-UD navy scale (match podcast network embed)
+     Owner: Hermes CTO (2026-08-04)
+     Webflow: paste into Embed, or load ud-insights-series.js mount
+     ============================================================ -->
+<style>
+#ud-insights, #ud-insights * { box-sizing: border-box; margin: 0; padding: 0; }
+#ud-insights {
+  --bg: #01060F;
+  --bg2: #010E1E;
+  --bg3: #0F1B35;
+  --line: #1E2A4A;
+  --text: #F2F7FD;
+  --muted: #9FB2CC;
+  --dim: #5E7398;
+  --blue: #4DA9F0;
+  --ice: #A8E0FF;
+  --mag: #FF3DB0;
+  --radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 640px;
+  height: 720px;
+  width: 100%;
+  position: relative;
+  border: 1px solid var(--line);
+}
+#ud-insights button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+#ud-insights a { color: inherit; }
+
+/* Header */
+#udi-header {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--line);
+  flex-shrink: 0;
+}
+#udi-header h2 {
+  font-size: 13px; font-weight: 800; font-style: italic;
+  letter-spacing: 0.07em; text-transform: uppercase; color: var(--text);
+}
+#udi-header p { font-size: 11px; color: var(--muted); margin-top: 2px; max-width: 520px; line-height: 1.35; }
+#udi-badge {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ice);
+  border: 1px solid var(--line); background: var(--bg3);
+  padding: 4px 8px; border-radius: 999px; flex-shrink: 0;
+}
+#udi-back {
+  display: none; align-items: center; gap: 6px;
+  padding: 6px 10px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--bg3);
+  font-size: 12px; font-weight: 600; color: var(--text);
+  transition: background 0.15s, border-color 0.15s;
+}
+#udi-back:hover { background: var(--line); border-color: var(--dim); }
+#udi-back.visible { display: inline-flex; }
+#udi-count {
+  margin-left: auto; font-size: 11px; color: var(--dim);
+  white-space: nowrap; flex-shrink: 0;
+}
+
+/* Body */
+#udi-body {
+  flex: 1; min-height: 0; position: relative;
+  display: flex; flex-direction: column;
+}
+
+/* ===== VIEW: SERIES ===== */
+#udi-series-view {
+  flex: 1; overflow: auto; padding: 20px 18px 24px;
+  display: grid; gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  align-content: start;
+}
+.udi-series-card {
+  text-align: left;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, var(--bg3), var(--bg2));
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.18s ease, border-color 0.18s, box-shadow 0.18s;
+  display: flex; flex-direction: column; min-height: 220px;
+}
+.udi-series-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--dim);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(77,169,240,0.15);
+}
+.udi-series-card:focus-visible {
+  outline: 2px solid var(--blue); outline-offset: 2px;
+}
+.udi-series-cover {
+  height: 96px; position: relative;
+  display: flex; align-items: flex-end; padding: 12px 14px;
+  background: linear-gradient(120deg, #0B3D5C, #010E1E);
+}
+.udi-series-cover::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(1,6,15,0.55), transparent 60%);
+  pointer-events: none;
+}
+.udi-series-mark {
+  position: relative; z-index: 1;
+  font-size: 22px; font-weight: 800; letter-spacing: -0.02em; color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+.udi-series-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.udi-series-name { font-size: 16px; font-weight: 700; color: var(--text); }
+.udi-series-promise { font-size: 12.5px; line-height: 1.45; color: var(--muted); flex: 1; }
+.udi-series-meta {
+  display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+  font-size: 11px; color: var(--dim);
+}
+.udi-chip {
+  display: inline-flex; align-items: center;
+  padding: 3px 8px; border-radius: 999px;
+  background: rgba(77,169,240,0.12); color: var(--ice);
+  border: 1px solid rgba(77,169,240,0.25);
+  font-size: 10px; font-weight: 600; letter-spacing: 0.02em;
+}
+.udi-series-cta {
+  margin-top: 4px; font-size: 12px; font-weight: 600; color: var(--blue);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.udi-series-card:hover .udi-series-cta { color: var(--ice); }
+
+/* ===== VIEW: ARTICLES ===== */
+#udi-articles-view {
+  display: none; flex-direction: column; flex: 1; min-height: 0;
+}
+#udi-articles-view.active { display: flex; }
+#udi-series-banner {
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg2);
+  flex-shrink: 0;
+}
+#udi-series-banner h3 {
+  font-size: 18px; font-weight: 700; color: var(--text);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+#udi-series-banner .udi-live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--mag); box-shadow: 0 0 0 3px rgba(255,61,176,0.2);
+}
+#udi-series-banner p { font-size: 12px; color: var(--muted); margin-top: 6px; max-width: 640px; line-height: 1.4; }
+#udi-series-banner .udi-banner-meta {
+  margin-top: 8px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  font-size: 11px; color: var(--dim);
+}
+
+#udi-rail-wrap {
+  position: relative; flex: 1; min-height: 0;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 18px 0 12px;
+}
+#udi-rail {
+  display: flex; gap: 14px;
+  overflow-x: auto; overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 18px;
+  padding: 8px 18px 18px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+#udi-rail::-webkit-scrollbar { height: 6px; }
+#udi-rail::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+
+.udi-article-card {
+  flex: 0 0 min(280px, 78vw);
+  scroll-snap-align: start;
+  text-align: left;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--bg2);
+  overflow: hidden;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  display: flex; flex-direction: column;
+  min-height: 300px;
+}
+.udi-article-card:hover {
+  border-color: var(--dim);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.3);
+}
+.udi-article-card:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.udi-article-card.is-active {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 1px rgba(77,169,240,0.45), 0 12px 32px rgba(0,0,0,0.35);
+}
+.udi-thumb {
+  height: 120px; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #13284a, #010E1E 60%);
+  border-bottom: 1px solid var(--line);
+}
+.udi-thumb-mark {
+  font-size: 28px; font-weight: 800; color: rgba(242,247,253,0.2);
+  letter-spacing: 0.08em;
+}
+.udi-thumb-badges {
+  position: absolute; top: 10px; left: 10px; right: 10px;
+  display: flex; gap: 6px; flex-wrap: wrap;
+}
+.udi-pill {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 3px 7px; border-radius: 999px;
+  background: rgba(1,6,15,0.65); color: var(--ice); border: 1px solid rgba(168,224,255,0.25);
+  backdrop-filter: blur(6px);
+}
+.udi-pill.start { color: #ffd6ef; border-color: rgba(255,61,176,0.4); }
+.udi-article-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.udi-article-title {
+  font-size: 14px; font-weight: 700; line-height: 1.35; color: var(--text);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.udi-article-dek {
+  font-size: 12px; line-height: 1.4; color: var(--muted);
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  flex: 1;
+}
+.udi-article-foot {
+  display: flex; justify-content: space-between; align-items: center; gap: 8px;
+  font-size: 11px; color: var(--dim); margin-top: 4px;
+}
+.udi-article-foot span:last-child { color: var(--blue); font-weight: 600; }
+
+#udi-rail-nav {
+  display: flex; justify-content: center; gap: 8px; padding-bottom: 8px;
+}
+#udi-rail-nav button {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--line); background: var(--bg3);
+  color: var(--text); font-size: 16px; line-height: 1;
+  transition: background 0.15s, border-color 0.15s;
+}
+#udi-rail-nav button:hover { background: var(--line); border-color: var(--dim); }
+#udi-rail-nav button:disabled { opacity: 0.35; cursor: default; }
+
+/* ===== DETAIL PANEL ===== */
+#udi-detail {
+  position: absolute; inset: 0; z-index: 20;
+  display: none; align-items: stretch; justify-content: flex-end;
+  background: rgba(1,6,15,0.55);
+  backdrop-filter: blur(4px);
+}
+#udi-detail.open { display: flex; }
+#udi-detail-panel {
+  width: min(420px, 100%);
+  background: var(--bg2);
+  border-left: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  box-shadow: -20px 0 50px rgba(0,0,0,0.45);
+  animation: udi-slide 0.22s ease;
+}
+@keyframes udi-slide {
+  from { transform: translateX(16px); opacity: 0.6; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .udi-series-card, .udi-article-card { transition: none; }
+  #udi-detail-panel { animation: none; }
+}
+#udi-detail-top {
+  padding: 14px 16px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: flex-start; gap: 10px;
+}
+#udi-detail-close {
+  margin-left: auto; width: 32px; height: 32px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--bg3);
+  font-size: 18px; line-height: 1; color: var(--muted);
+}
+#udi-detail-close:hover { color: var(--text); background: var(--line); }
+#udi-detail-kicker {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--blue);
+}
+#udi-detail-hero {
+  height: 140px; border-bottom: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #1a3358, #010E1E);
+  position: relative;
+}
+#udi-detail-hero span {
+  font-size: 42px; font-weight: 800; color: rgba(242,247,253,0.15); letter-spacing: 0.1em;
+}
+#udi-detail-content { padding: 18px 18px 12px; overflow: auto; flex: 1; }
+#udi-detail-content h4 {
+  font-size: 18px; font-weight: 700; line-height: 1.3; color: var(--text); margin-bottom: 8px;
+}
+#udi-detail-dek { font-size: 13px; line-height: 1.45; color: var(--muted); margin-bottom: 14px; }
+#udi-detail-meta {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
+  font-size: 11px; color: var(--dim);
+}
+#udi-detail-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--dim); margin-bottom: 8px;
+}
+#udi-detail-bullets {
+  list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px;
+}
+#udi-detail-bullets li {
+  position: relative; padding-left: 14px;
+  font-size: 13px; line-height: 1.45; color: var(--text);
+}
+#udi-detail-bullets li::before {
+  content: ""; position: absolute; left: 0; top: 0.55em;
+  width: 6px; height: 6px; border-radius: 50%; background: var(--blue);
+}
+#udi-detail-actions {
+  padding: 14px 18px 18px; border-top: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 8px; flex-shrink: 0;
+  background: var(--bg2);
+}
+.udi-btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 12px 16px; border-radius: 10px;
+  background: linear-gradient(90deg, var(--mag), var(--blue));
+  color: #fff !important; font-size: 13px; font-weight: 700;
+  text-decoration: none !important;
+  transition: filter 0.15s, transform 0.15s;
+}
+.udi-btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.udi-btn-secondary {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 10px 14px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--bg3);
+  color: var(--text) !important; font-size: 12px; font-weight: 600;
+  text-decoration: none !important;
+}
+.udi-btn-secondary:hover { border-color: var(--dim); background: var(--line); }
+#udi-detail-note {
+  font-size: 10px; color: var(--dim); text-align: center; line-height: 1.35;
+}
+
+/* Empty / error */
+#udi-status {
+  display: none; padding: 40px 24px; text-align: center; color: var(--muted); font-size: 13px;
+}
+#udi-status.show { display: block; }
+
+/* Mobile detail full-bleed */
+@media (max-width: 640px) {
+  #ud-insights { height: auto; min-height: 560px; max-height: none; }
+  #udi-detail-panel { width: 100%; }
+  #udi-header p { display: none; }
+  .udi-article-card { flex-basis: min(260px, 85vw); min-height: 280px; }
+}
+</style>
+
+<div id="ud-insights" role="region" aria-label="UPRT+ article series browser">
+  <div id="udi-header">
+    <span id="udi-badge">UPRT+</span>
+    <button type="button" id="udi-back" aria-label="Back to series">← Series</button>
+    <div>
+      <h2 id="udi-title">Article series</h2>
+      <p id="udi-subtitle">Programmed coverage — browse series, skim summaries, read full pieces on Substack.</p>
+    </div>
+    <div id="udi-count"></div>
+  </div>
+
+  <div id="udi-body">
+    <div id="udi-status"></div>
+
+    <div id="udi-series-view" aria-label="Series"></div>
+
+    <div id="udi-articles-view" aria-label="Articles in series">
+      <div id="udi-series-banner">
+        <h3><span class="udi-live-dot" aria-hidden="true"></span><span id="udi-banner-name"></span></h3>
+        <p id="udi-banner-promise"></p>
+        <div class="udi-banner-meta" id="udi-banner-meta"></div>
+      </div>
+      <div id="udi-rail-wrap">
+        <div id="udi-rail" tabindex="0" aria-label="Articles — scroll horizontally"></div>
+        <div id="udi-rail-nav">
+          <button type="button" id="udi-rail-prev" aria-label="Scroll articles left">‹</button>
+          <button type="button" id="udi-rail-next" aria-label="Scroll articles right">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="udi-detail" aria-hidden="true">
+      <div id="udi-detail-panel" role="dialog" aria-modal="true" aria-labelledby="udi-detail-title">
+        <div id="udi-detail-top">
+          <div>
+            <div id="udi-detail-kicker"></div>
+          </div>
+          <button type="button" id="udi-detail-close" aria-label="Close summary">×</button>
+        </div>
+        <div id="udi-detail-hero"><span id="udi-detail-mark">UP</span></div>
+        <div id="udi-detail-content">
+          <h4 id="udi-detail-title"></h4>
+          <p id="udi-detail-dek"></p>
+          <div id="udi-detail-meta"></div>
+          <div id="udi-detail-label">In this piece</div>
+          <ul id="udi-detail-bullets"></ul>
+        </div>
+        <div id="udi-detail-actions">
+          <a class="udi-btn-primary" id="udi-btn-substack" href="#" target="_blank" rel="noopener noreferrer">
+            Read full article on Substack →
+          </a>
+          <a class="udi-btn-secondary" id="udi-btn-series-home" href="#" target="_blank" rel="noopener noreferrer">
+            Series on Substack
+          </a>
+          <div id="udi-detail-note">On-site summary only — long-form lives on Substack.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const ROOT = document.getElementById('ud-insights');
+  if (!ROOT || ROOT.dataset.booted) return;
+  ROOT.dataset.booted = '1';
+
+  // Prefer explicit data URL; fall back to relative series.json (GitHub raw / local)
+  const DATA_URL =
+    ROOT.getAttribute('data-series-url') ||
+    (document.currentScript && document.currentScript.getAttribute('data-series-url')) ||
+    'series.json';
+
+  const els = {
+    back: document.getElementById('udi-back'),
+    count: document.getElementById('udi-count'),
+    status: document.getElementById('udi-status'),
+    seriesView: document.getElementById('udi-series-view'),
+    articlesView: document.getElementById('udi-articles-view'),
+    bannerName: document.getElementById('udi-banner-name'),
+    bannerPromise: document.getElementById('udi-banner-promise'),
+    bannerMeta: document.getElementById('udi-banner-meta'),
+    rail: document.getElementById('udi-rail'),
+    prev: document.getElementById('udi-rail-prev'),
+    next: document.getElementById('udi-rail-next'),
+    detail: document.getElementById('udi-detail'),
+    detailKicker: document.getElementById('udi-detail-kicker'),
+    detailMark: document.getElementById('udi-detail-mark'),
+    detailTitle: document.getElementById('udi-detail-title'),
+    detailDek: document.getElementById('udi-detail-dek'),
+    detailMeta: document.getElementById('udi-detail-meta'),
+    detailBullets: document.getElementById('udi-detail-bullets'),
+    btnSubstack: document.getElementById('udi-btn-substack'),
+    btnSeriesHome: document.getElementById('udi-btn-series-home'),
+    detailClose: document.getElementById('udi-detail-close'),
+    title: document.getElementById('udi-title'),
+    subtitle: document.getElementById('udi-subtitle'),
+  };
+
+  let data = null;
+  let activeSeriesId = null;
+  let activeArticleId = null;
+  const verticalColors = {};
+
+  function showStatus(msg) {
+    els.status.textContent = msg;
+    els.status.classList.add('show');
+  }
+  function hideStatus() {
+    els.status.classList.remove('show');
+    els.status.textContent = '';
+  }
+
+  function fmtDate(iso) {
+    if (!iso) return '';
+    try {
+      const d = new Date(iso + (iso.length === 10 ? 'T12:00:00' : ''));
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+    } catch (_) {
+      return iso;
+    }
+  }
+
+  function chip(label) {
+    const s = document.createElement('span');
+    s.className = 'udi-chip';
+    s.textContent = label;
+    const c = verticalColors[label];
+    if (c) {
+      s.style.borderColor = c + '66';
+      s.style.color = c;
+      s.style.background = c + '18';
+    }
+    return s;
+  }
+
+  function articlesFor(seriesId) {
+    return (data.articles || [])
+      .filter((a) => a.series_id === seriesId)
+      .sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+  }
+
+  function seriesById(id) {
+    return (data.series || []).find((s) => s.id === id);
+  }
+
+  function renderSeries() {
+    activeSeriesId = null;
+    activeArticleId = null;
+    closeDetail();
+    els.articlesView.classList.remove('active');
+    els.seriesView.style.display = 'grid';
+    els.back.classList.remove('visible');
+    els.seriesView.innerHTML = '';
+
+    const series = data.series || [];
+    els.count.textContent = series.length + ' series · ' + (data.articles || []).length + ' pieces';
+
+    series.forEach((s) => {
+      const n = articlesFor(s.id).length;
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'udi-series-card';
+      btn.setAttribute('aria-label', 'Open series ' + s.name);
+
+      const cover = document.createElement('div');
+      cover.className = 'udi-series-cover';
+      const g = s.cover_gradient || ['#0F1B35', '#010E1E'];
+      cover.style.background = 'linear-gradient(120deg, ' + g[0] + ', ' + g[1] + ')';
+      if (s.accent) cover.style.boxShadow = 'inset 0 -2px 0 ' + s.accent;
+      const mark = document.createElement('div');
+      mark.className = 'udi-series-mark';
+      mark.textContent = (s.name || 'Series').split(' ').map((w) => w[0]).join('').slice(0, 3);
+      cover.appendChild(mark);
+
+      const body = document.createElement('div');
+      body.className = 'udi-series-body';
+      body.innerHTML =
+        '<div class="udi-series-name"></div>' +
+        '<div class="udi-series-promise"></div>' +
+        '<div class="udi-series-meta"></div>' +
+        '<div class="udi-series-cta">Browse articles →</div>';
+      body.querySelector('.udi-series-name').textContent = s.name;
+      body.querySelector('.udi-series-promise').textContent = s.promise || '';
+      const meta = body.querySelector('.udi-series-meta');
+      (s.verticals || []).forEach((v) => meta.appendChild(chip(v)));
+      const countEl = document.createElement('span');
+      countEl.textContent = n + (n === 1 ? ' article' : ' articles');
+      meta.appendChild(countEl);
+
+      btn.appendChild(cover);
+      btn.appendChild(body);
+      btn.addEventListener('click', () => openSeries(s.id));
+      els.seriesView.appendChild(btn);
+    });
+  }
+
+  function openSeries(seriesId) {
+    const s = seriesById(seriesId);
+    if (!s) return;
+    activeSeriesId = seriesId;
+    closeDetail();
+    els.seriesView.style.display = 'none';
+    els.articlesView.classList.add('active');
+    els.back.classList.add('visible');
+
+    els.bannerName.textContent = s.name;
+    els.bannerPromise.textContent = s.promise || '';
+    els.bannerMeta.innerHTML = '';
+    (s.verticals || []).forEach((v) => els.bannerMeta.appendChild(chip(v)));
+    if (s.spokesperson) {
+      const sp = document.createElement('span');
+      sp.textContent = 'Voice: ' + s.spokesperson;
+      els.bannerMeta.appendChild(sp);
+    }
+    const upd = document.createElement('span');
+    upd.textContent = 'Updated ' + fmtDate(s.updated);
+    els.bannerMeta.appendChild(upd);
+
+    const arts = articlesFor(seriesId);
+    els.count.textContent = arts.length + (arts.length === 1 ? ' article' : ' articles');
+    els.rail.innerHTML = '';
+
+    arts.forEach((a) => {
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'udi-article-card';
+      card.dataset.id = a.id;
+      card.setAttribute('aria-label', 'Summary: ' + a.title);
+
+      const thumb = document.createElement('div');
+      thumb.className = 'udi-thumb';
+      if (s.cover_gradient) {
+        thumb.style.background =
+          'linear-gradient(135deg, ' + s.cover_gradient[0] + ', ' + (s.cover_gradient[1] || '#010E1E') + ')';
+      }
+      const badges = document.createElement('div');
+      badges.className = 'udi-thumb-badges';
+      if (a.start_here) {
+        const p = document.createElement('span');
+        p.className = 'udi-pill start';
+        p.textContent = 'Start here';
+        badges.appendChild(p);
+      }
+      if (a.featured) {
+        const p = document.createElement('span');
+        p.className = 'udi-pill';
+        p.textContent = 'Featured';
+        badges.appendChild(p);
+      }
+      const mark = document.createElement('div');
+      mark.className = 'udi-thumb-mark';
+      mark.textContent = a.thumb_label || 'UP';
+      thumb.appendChild(badges);
+      thumb.appendChild(mark);
+
+      const body = document.createElement('div');
+      body.className = 'udi-article-body';
+      const title = document.createElement('div');
+      title.className = 'udi-article-title';
+      title.textContent = a.title;
+      const dek = document.createElement('div');
+      dek.className = 'udi-article-dek';
+      dek.textContent = a.one_liner || '';
+      const foot = document.createElement('div');
+      foot.className = 'udi-article-foot';
+      foot.innerHTML =
+        '<span></span><span>Summary</span>';
+      foot.querySelector('span').textContent =
+        [fmtDate(a.date), a.read_min ? a.read_min + ' min' : ''].filter(Boolean).join(' · ');
+      body.appendChild(title);
+      body.appendChild(dek);
+      body.appendChild(foot);
+
+      card.appendChild(thumb);
+      card.appendChild(body);
+      card.addEventListener('click', () => openArticle(a.id));
+      els.rail.appendChild(card);
+    });
+
+    requestAnimationFrame(() => {
+      els.rail.scrollLeft = 0;
+      updateRailButtons();
+    });
+  }
+
+  function openArticle(articleId) {
+    const a = (data.articles || []).find((x) => x.id === articleId);
+    const s = seriesById(a && a.series_id);
+    if (!a || !s) return;
+    activeArticleId = articleId;
+
+    ROOT.querySelectorAll('.udi-article-card').forEach((c) => {
+      c.classList.toggle('is-active', c.dataset.id === articleId);
+    });
+
+    els.detailKicker.textContent = s.name;
+    els.detailMark.textContent = a.thumb_label || 'UP';
+    els.detailTitle.textContent = a.title;
+    els.detailDek.textContent = a.one_liner || '';
+    els.detailMeta.innerHTML = '';
+    const bits = [fmtDate(a.date), a.read_min ? a.read_min + ' min read' : ''].filter(Boolean);
+    bits.forEach((b) => {
+      const span = document.createElement('span');
+      span.textContent = b;
+      els.detailMeta.appendChild(span);
+    });
+    (a.verticals || []).forEach((v) => els.detailMeta.appendChild(chip(v)));
+
+    els.detailBullets.innerHTML = '';
+    (a.summary_bullets || []).forEach((line) => {
+      const li = document.createElement('li');
+      li.textContent = line;
+      els.detailBullets.appendChild(li);
+    });
+
+    els.btnSubstack.href = a.substack_url || s.substack_home || '#';
+    els.btnSeriesHome.href = s.substack_home || a.substack_url || '#';
+    els.btnSeriesHome.textContent = 'All of ' + s.name + ' on Substack';
+
+    els.detail.classList.add('open');
+    els.detail.setAttribute('aria-hidden', 'false');
+    els.detailClose.focus();
+  }
+
+  function closeDetail() {
+    activeArticleId = null;
+    els.detail.classList.remove('open');
+    els.detail.setAttribute('aria-hidden', 'true');
+    ROOT.querySelectorAll('.udi-article-card.is-active').forEach((c) => c.classList.remove('is-active'));
+  }
+
+  function updateRailButtons() {
+    const el = els.rail;
+    const max = el.scrollWidth - el.clientWidth - 4;
+    els.prev.disabled = el.scrollLeft <= 4;
+    els.next.disabled = el.scrollLeft >= max;
+  }
+
+  els.back.addEventListener('click', () => renderSeries());
+  els.detailClose.addEventListener('click', closeDetail);
+  els.detail.addEventListener('click', (e) => {
+    if (e.target === els.detail) closeDetail();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && els.detail.classList.contains('open')) {
+      closeDetail();
+    }
+  });
+  els.prev.addEventListener('click', () => {
+    els.rail.scrollBy({ left: -300, behavior: 'smooth' });
+  });
+  els.next.addEventListener('click', () => {
+    els.rail.scrollBy({ left: 300, behavior: 'smooth' });
+  });
+  els.rail.addEventListener('scroll', () => updateRailButtons(), { passive: true });
+
+  fetch(DATA_URL, { cache: 'no-cache' })
+    .then((r) => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then((json) => {
+      data = json;
+      Object.assign(verticalColors, (json.meta && json.meta.vertical_colors) || {});
+      if (json.meta && json.meta.title) els.title.textContent = json.meta.title;
+      if (json.meta && json.meta.subtitle) els.subtitle.textContent = json.meta.subtitle;
+      hideStatus();
+      renderSeries();
+    })
+    .catch((err) => {
+      console.error('[ud-insights]', err);
+      showStatus('Could not load series data. Check series.json / data-series-url.');
+    });
+})();
+</script>

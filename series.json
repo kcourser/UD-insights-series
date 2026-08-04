@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "generated": "2026-08-04T19:45:00Z",
+    "brand": "UPRT+",
+    "title": "Article series",
+    "subtitle": "Programmed coverage across oil & gas, power, and data — full reads on Substack",
+    "vertical_colors": {
+      "Oil & Gas": "#4DA9F0",
+      "Power": "#FFB020",
+      "Data": "#A8E0FF",
+      "Middle East": "#FF3DB0",
+      "AI & Tech": "#7C6CFF"
+    }
+  },
+  "series": [
+    {
+      "id": "desert-capital",
+      "name": "Desert Capital",
+      "promise": "UAE & Middle East energy — capital, operators, and the corridors that move product.",
+      "spokesperson": "Osama Rizbe",
+      "verticals": ["Oil & Gas", "Middle East", "Power"],
+      "cover_gradient": ["#0B3D5C", "#010E1E"],
+      "accent": "#FF3DB0",
+      "substack_home": "https://substack.com/",
+      "updated": "2026-07-28"
+    },
+    {
+      "id": "clearsync-connect",
+      "name": "Clearsync Connect",
+      "promise": "Power, AI, and the tech stack reshaping demand — grid to data center.",
+      "spokesperson": "Richard Rodriguez",
+      "verticals": ["Power", "Data", "AI & Tech"],
+      "cover_gradient": ["#1A1040", "#010E1E"],
+      "accent": "#4DA9F0",
+      "substack_home": "https://substack.com/",
+      "updated": "2026-07-30"
+    }
+  ],
+  "articles": [
+    {
+      "id": "dc-001",
+      "series_id": "desert-capital",
+      "title": "Why Abu Dhabi still sets the tempo for global gas deals",
+      "one_liner": "ADNOC’s partnership cadence is a signal, not a sideshow — here’s how buyers should read it.",
+      "summary_bullets": [
+        "How ADNOC’s deal rhythm shapes LNG and midstream capital allocation outside the region",
+        "What PE and service operators miss when they treat ME only as a destination market",
+        "Three relationship tells that show up before press releases"
+      ],
+      "date": "2026-07-28",
+      "read_min": 6,
+      "verticals": ["Oil & Gas", "Middle East"],
+      "substack_url": "https://substack.com/",
+      "thumb_label": "DC",
+      "start_here": true,
+      "featured": true
+    },
+    {
+      "id": "dc-002",
+      "series_id": "desert-capital",
+      "title": "The quiet infrastructure bet under every GES week invitation",
+      "one_liner": "Invitation density is a leading indicator for who controls access — not just hospitality.",
+      "summary_bullets": [
+        "Why convening power compounds faster than ad spend in industrial markets",
+        "How UPRT Live–style rooms differ from booth traffic at scale shows",
+        "What to prepare before you walk into a senior-only energy room"
+      ],
+      "date": "2026-07-14",
+      "read_min": 5,
+      "verticals": ["Oil & Gas", "Middle East"],
+      "substack_url": "https://substack.com/",
+      "thumb_label": "DC",
+      "start_here": false,
+      "featured": false
+    },
+    {
+      "id": "dc-003",
+      "series_id": "desert-capital",
+      "title": "Service companies and the Gulf: stop pitching Houston decks",
+      "one_liner": "The buyer’s decision unit, risk language, and time horizon are not a find-replace of Texas.",
+      "summary_bullets": [
+        "Message-map gaps that kill otherwise strong technical offers",
+        "Local partnership signals that matter more than logo walls",
+        "A practical checklist before your next ME bid cycle"
+      ],
+      "date": "2026-06-30",
+      "read_min": 7,
+      "verticals": ["Oil & Gas", "Middle East"],
+      "substack_url": "https://substack.com/",
+      "thumb_label": "DC",
+      "start_here": false,
+      "featured": false
+    },
+    {
+      "id": "dc-004",
+      "series_id": "desert-capital",
+      "title": "Power corridors: when oil money and electrons share a board table",
+      "one_liner": "Integrated energy portfolios are rewriting who sits in the room — and what “upstream” means.",
+      "summary_bullets": [
+        "Where power and hydrocarbons already share capital committees",
+        "Narrative risks when brands still speak only “barrels”",
+        "How Desert Capital frames dual-track coverage without watering down either lane"
+      ],
+      "date": "2026-06-12",
+      "read_min": 6,
+      "verticals": ["Power", "Oil & Gas", "Middle East"],
+      "substack_url": "https://substack.com/",
+      "thumb_label": "DC",
+      "start_here": false,
+      "featured": false
+    },
+    {
+      "id": "cc-001",
+      "series_id": "clearsync-connect",
+      "title": "Data centers don’t buy “power.” They buy certainty.",
+      "one_liner": "Hyperscale demand is a contracting problem first — generation marketing second.",
+      "summary_bullets": [
+        "Why latency of interconnection beats headline MW in buyer conversations",
+        "How operators should message firmness vs. green attributes without lying",
+        "The three slides that actually move a data-center energy RFP"
+      ],
+      "date": "2026-07-30",
+      "read_min": 6,
+      "verticals": ["Power", "Data", "AI & Tech"],
+      "substack_url": "https://substack.com/",
+      "thumb_label": "CC",
+      "start_here": true,
+      "featured": true
+    },
+    {
+      "id": "cc-002",
+      "series_id": "clearsync-connect",
+      "title": "AI load is not a 2030 story in the Permian adjacency",
+      "one_liner": "Grid stress and gas peakers are already a marketing and partnership problem for 2026–27.",
+      "summary_bullets": [
+        "Regional tells that AI/data load is pulling industrial energy narratives now",
+        "Where O&G marketers should (and shouldn’t) claim adjacency",
+        "A Clearsync frame for cross-vertical content without category confusion"
+      ],
+      "date": "2026-07-18",
+      "read_min": 5,
+      "verticals": ["Power", "Data", "Oil & Gas"],
+      "substack_url": "https://substack.com/",
+      "thumb_label": "CC",
+      "start_here": false,
+      "featured": false
+    },
+    {
+      "id": "cc-003",
+      "series_id": "clearsync-connect",
+      "title": "The stack behind “smart operations” nobody markets cleanly",
+      "one_liner": "Sensors, OT, and cloud partners all claim the outcome — buyers hear noise.",
+      "summary_bullets": [
+        "How to position a slice of the stack without over-claiming the whole plant",
+        "Message hierarchy: outcome → proof → interface → integrator",
+        "Content series ideas that build trust across a 9-month deal cycle"
+      ],
+      "date": "2026-07-02",
+      "read_min": 8,
+      "verticals": ["AI & Tech", "Data", "Oil & Gas"],
+      "substack_url": "https://substack.com/",
+      "thumb_label": "CC",
+      "start_here": false,
+      "featured": false
+    },
+    {
+      "id": "cc-004",
+      "series_id": "clearsync-connect",
+      "title": "From podcast guest to pipeline: making tech voices convert",
+      "one_liner": "UPRT+ only pays when visibility becomes a next conversation — not a vanity clip.",
+      "summary_bullets": [
+        "Post-episode content paths that feed Clearsync and sales enablement",
+        "What “Numbers = Revenue” looks like for a single tech spokesperson lane",
+        "Simple CTAs that don’t cheapen a high-trust industrial brand"
+      ],
+      "date": "2026-06-20",
+      "read_min": 5,
+      "verticals": ["AI & Tech", "Data"],
+      "substack_url": "https://substack.com/",
+      "thumb_label": "CC",
+      "start_here": false,
+      "featured": false
+    }
+  ]
+}
