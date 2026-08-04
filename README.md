@@ -1,5 +1,7 @@
 # UPRT+ Insights Series Browser
 
+**Repo:** https://github.com/kcourser/UD-insights-series  
+
 Interactive **Substack series intro** for the UD 2026 site (Webflow embed).
 
 **Not a full article reader.** On-site path:

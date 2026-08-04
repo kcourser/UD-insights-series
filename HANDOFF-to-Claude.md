@@ -33,34 +33,35 @@ Series cards → horizontal article rail (thumb + one-liner)
 1. **Desert Capital** — UAE/ME energy (Osama Rizbe)  
 2. **Clearsync Connect** — power, AI, tech (Richard Rodriguez)
 
-## Where files live (Mac / OneDrive)
+## Where files live
 
+**GitHub (Claude-friendly):** https://github.com/kcourser/UD-insights-series  
+
+**Raw / CDN:**
+- HTML: https://cdn.jsdelivr.net/gh/kcourser/UD-insights-series@main/ud-insights-series.html  
+- JS: https://cdn.jsdelivr.net/gh/kcourser/UD-insights-series@main/ud-insights-series.js  
+- Data: https://cdn.jsdelivr.net/gh/kcourser/UD-insights-series@main/series.json  
+- Handoff: https://github.com/kcourser/UD-insights-series/blob/main/HANDOFF-to-Claude.md  
+
+**Mac / OneDrive checkout:**
 ```
 …/OneDrive-UprightDigital/Podcasts/PODCAST SHOWS/Transcript Files - Github/UD-insights-series/
-  series.json
-  ud-insights-series.html    ← paste this into Webflow Embed (v1)
-  ud-insights-series.js      ← optional loader after GitHub
-  preview.html
-  README.md
-  HANDOFF-to-Claude.md       ← this file
 ```
 
-PARA: `02 Projects/Upright Digital/website-insights-series.md`  
-Local preview: `cd` that folder → `python3 -m http.server 8765` → `http://127.0.0.1:8765/preview.html`
+PARA: `02 Projects/Upright Digital/website-insights-series.md`
 
 ## What Claude should do in Webflow
 
 1. Add / open the **UPRT+** page section for article series (or Insights).
 2. Place heading + short franchise line (site copy — Claude).
 3. Add an **Embed** element full-width under it.
-4. **v1 (now):** paste entire contents of `ud-insights-series.html`.
+4. **Preferred (GitHub live):** use the jsDelivr mount below.  
+   **Alt:** paste entire contents of `ud-insights-series.html` from the repo.
 5. Ensure page loads **Poppins** (already on UD 2026).
 6. Give the section enough height (~720px desktop; embed is responsive).
 7. Do **not** nest the embed inside a tiny fixed-height div that clips the panel.
 
-### After Hermes pushes GitHub `kcourser/UD-insights-series`
-
-Shrink embed to:
+### Webflow embed (repo is public on GitHub)
 
 ```html
 <div id="ud-insights-mount"
