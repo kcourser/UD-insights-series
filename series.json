@@ -1,185 +1,496 @@
 {
-  "meta": {
-    "generated": "2026-08-04T19:45:00Z",
-    "brand": "UPRT+",
-    "title": "Article series",
-    "subtitle": "Programmed coverage across oil & gas, power, and data — full reads on Substack",
-    "vertical_colors": {
-      "Oil & Gas": "#4DA9F0",
-      "Power": "#FFB020",
-      "Data": "#A8E0FF",
-      "Middle East": "#FF3DB0",
-      "AI & Tech": "#7C6CFF"
-    }
+ "meta": {
+  "generated": "2026-08-05T20:20:56.346913+00:00",
+  "brand": "UPRT+",
+  "title": "Article series",
+  "subtitle": "Programmed coverage across oil & gas, power, and data — full reads on Substack",
+  "vertical_colors": {
+   "Oil & Gas": "#4DA9F0",
+   "Power": "#FFB020",
+   "Data": "#A8E0FF",
+   "Middle East": "#FF3DB0",
+   "AI & Tech": "#7C6CFF"
   },
-  "series": [
-    {
-      "id": "desert-capital",
-      "name": "Desert Capital",
-      "promise": "UAE & Middle East energy — capital, operators, and the corridors that move product.",
-      "spokesperson": "Osama Rizbe",
-      "verticals": ["Oil & Gas", "Middle East", "Power"],
-      "cover_gradient": ["#0B3D5C", "#010E1E"],
-      "accent": "#FF3DB0",
-      "substack_home": "https://substack.com/",
-      "updated": "2026-07-28"
-    },
-    {
-      "id": "clearsync-connect",
-      "name": "Clearsync Connect",
-      "promise": "Power, AI, and the tech stack reshaping demand — grid to data center.",
-      "spokesperson": "Richard Rodriguez",
-      "verticals": ["Power", "Data", "AI & Tech"],
-      "cover_gradient": ["#1A1040", "#010E1E"],
-      "accent": "#4DA9F0",
-      "substack_home": "https://substack.com/",
-      "updated": "2026-07-30"
-    }
-  ],
-  "articles": [
-    {
-      "id": "dc-001",
-      "series_id": "desert-capital",
-      "title": "Why Abu Dhabi still sets the tempo for global gas deals",
-      "one_liner": "ADNOC’s partnership cadence is a signal, not a sideshow — here’s how buyers should read it.",
-      "summary_bullets": [
-        "How ADNOC’s deal rhythm shapes LNG and midstream capital allocation outside the region",
-        "What PE and service operators miss when they treat ME only as a destination market",
-        "Three relationship tells that show up before press releases"
-      ],
-      "date": "2026-07-28",
-      "read_min": 6,
-      "verticals": ["Oil & Gas", "Middle East"],
-      "substack_url": "https://substack.com/",
-      "thumb_label": "DC",
-      "start_here": true,
-      "featured": true
-    },
-    {
-      "id": "dc-002",
-      "series_id": "desert-capital",
-      "title": "The quiet infrastructure bet under every GES week invitation",
-      "one_liner": "Invitation density is a leading indicator for who controls access — not just hospitality.",
-      "summary_bullets": [
-        "Why convening power compounds faster than ad spend in industrial markets",
-        "How UPRT Live–style rooms differ from booth traffic at scale shows",
-        "What to prepare before you walk into a senior-only energy room"
-      ],
-      "date": "2026-07-14",
-      "read_min": 5,
-      "verticals": ["Oil & Gas", "Middle East"],
-      "substack_url": "https://substack.com/",
-      "thumb_label": "DC",
-      "start_here": false,
-      "featured": false
-    },
-    {
-      "id": "dc-003",
-      "series_id": "desert-capital",
-      "title": "Service companies and the Gulf: stop pitching Houston decks",
-      "one_liner": "The buyer’s decision unit, risk language, and time horizon are not a find-replace of Texas.",
-      "summary_bullets": [
-        "Message-map gaps that kill otherwise strong technical offers",
-        "Local partnership signals that matter more than logo walls",
-        "A practical checklist before your next ME bid cycle"
-      ],
-      "date": "2026-06-30",
-      "read_min": 7,
-      "verticals": ["Oil & Gas", "Middle East"],
-      "substack_url": "https://substack.com/",
-      "thumb_label": "DC",
-      "start_here": false,
-      "featured": false
-    },
-    {
-      "id": "dc-004",
-      "series_id": "desert-capital",
-      "title": "Power corridors: when oil money and electrons share a board table",
-      "one_liner": "Integrated energy portfolios are rewriting who sits in the room — and what “upstream” means.",
-      "summary_bullets": [
-        "Where power and hydrocarbons already share capital committees",
-        "Narrative risks when brands still speak only “barrels”",
-        "How Desert Capital frames dual-track coverage without watering down either lane"
-      ],
-      "date": "2026-06-12",
-      "read_min": 6,
-      "verticals": ["Power", "Oil & Gas", "Middle East"],
-      "substack_url": "https://substack.com/",
-      "thumb_label": "DC",
-      "start_here": false,
-      "featured": false
-    },
-    {
-      "id": "cc-001",
-      "series_id": "clearsync-connect",
-      "title": "Data centers don’t buy “power.” They buy certainty.",
-      "one_liner": "Hyperscale demand is a contracting problem first — generation marketing second.",
-      "summary_bullets": [
-        "Why latency of interconnection beats headline MW in buyer conversations",
-        "How operators should message firmness vs. green attributes without lying",
-        "The three slides that actually move a data-center energy RFP"
-      ],
-      "date": "2026-07-30",
-      "read_min": 6,
-      "verticals": ["Power", "Data", "AI & Tech"],
-      "substack_url": "https://substack.com/",
-      "thumb_label": "CC",
-      "start_here": true,
-      "featured": true
-    },
-    {
-      "id": "cc-002",
-      "series_id": "clearsync-connect",
-      "title": "AI load is not a 2030 story in the Permian adjacency",
-      "one_liner": "Grid stress and gas peakers are already a marketing and partnership problem for 2026–27.",
-      "summary_bullets": [
-        "Regional tells that AI/data load is pulling industrial energy narratives now",
-        "Where O&G marketers should (and shouldn’t) claim adjacency",
-        "A Clearsync frame for cross-vertical content without category confusion"
-      ],
-      "date": "2026-07-18",
-      "read_min": 5,
-      "verticals": ["Power", "Data", "Oil & Gas"],
-      "substack_url": "https://substack.com/",
-      "thumb_label": "CC",
-      "start_here": false,
-      "featured": false
-    },
-    {
-      "id": "cc-003",
-      "series_id": "clearsync-connect",
-      "title": "The stack behind “smart operations” nobody markets cleanly",
-      "one_liner": "Sensors, OT, and cloud partners all claim the outcome — buyers hear noise.",
-      "summary_bullets": [
-        "How to position a slice of the stack without over-claiming the whole plant",
-        "Message hierarchy: outcome → proof → interface → integrator",
-        "Content series ideas that build trust across a 9-month deal cycle"
-      ],
-      "date": "2026-07-02",
-      "read_min": 8,
-      "verticals": ["AI & Tech", "Data", "Oil & Gas"],
-      "substack_url": "https://substack.com/",
-      "thumb_label": "CC",
-      "start_here": false,
-      "featured": false
-    },
-    {
-      "id": "cc-004",
-      "series_id": "clearsync-connect",
-      "title": "From podcast guest to pipeline: making tech voices convert",
-      "one_liner": "UPRT+ only pays when visibility becomes a next conversation — not a vanity clip.",
-      "summary_bullets": [
-        "Post-episode content paths that feed Clearsync and sales enablement",
-        "What “Numbers = Revenue” looks like for a single tech spokesperson lane",
-        "Simple CTAs that don’t cheapen a high-trust industrial brand"
-      ],
-      "date": "2026-06-20",
-      "read_min": 5,
-      "verticals": ["AI & Tech", "Data"],
-      "substack_url": "https://substack.com/",
-      "thumb_label": "CC",
-      "start_here": false,
-      "featured": false
-    }
-  ]
+  "publication": "https://uprightdigital.substack.com"
+ },
+ "series": [
+  {
+   "id": "desert-capital",
+   "name": "Desert Capital",
+   "promise": "UAE & Middle East energy — capital, operators, and the corridors that move product.",
+   "spokesperson": "Osama Rizbe",
+   "verticals": [
+    "Oil & Gas",
+    "Middle East",
+    "Power"
+   ],
+   "cover_gradient": [
+    "#0B3D5C",
+    "#010E1E"
+   ],
+   "accent": "#FF3DB0",
+   "substack_home": "https://uprightdigital.substack.com",
+   "updated": "2026-08-04"
+  },
+  {
+   "id": "clearsync-connect",
+   "name": "Clearsync Connect",
+   "promise": "Power, AI, and the tech stack reshaping demand — grid to data center.",
+   "spokesperson": "Richard Rodriguez",
+   "verticals": [
+    "Power",
+    "Data",
+    "AI & Tech"
+   ],
+   "cover_gradient": [
+    "#1A1040",
+    "#010E1E"
+   ],
+   "accent": "#4DA9F0",
+   "substack_home": "https://uprightdigital.substack.com",
+   "updated": "2026-06-16"
+  }
+ ],
+ "articles": [
+  {
+   "id": "dc-005",
+   "series_id": "desert-capital",
+   "title": "The UAE Is Exporting More Than Oil Now",
+   "display_title": "The UAE Is Exporting More Than Oil Now",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-08-04",
+   "read_min": 3,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-uae-is-exporting-more-than-oil",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/ae9fa3f8-2c65-4100-9fab-8f1e6aa1dcc2_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": true,
+   "featured": true,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The UAE’s New Export: Operating Systems, Not Just Oil Most people, when they think about what the UAE sells to the rest of the world, think about oil, or maybe real estate and tourism by now. What’s l"
+  },
+  {
+   "id": "dc-006",
+   "series_id": "desert-capital",
+   "title": "The Permission Problem",
+   "display_title": "The Permission Problem",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-07-29",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-permission-problem",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/b69fe1bf-fcb6-487a-9f3d-306b9c2b55a9_5000x2625.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The Fourth Input: Permission For two years, this buildout got priced on three inputs: chips, power, capital. Get those three lined up and the rest was execution. That model is already out of date. The"
+  },
+  {
+   "id": "dc-007",
+   "series_id": "desert-capital",
+   "title": "How Do You Price a Chokepoint Nobody Controls?",
+   "display_title": "How Do You Price a Chokepoint Nobody Controls?",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-07-28",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/how-do-you-price-a-chokepoint-nobody",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/c9fe9735-4b5e-4b9e-a322-2e4aeea61811_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The Conflict Enters a New Phase Phase 2 of Desert Capital opens where Phase 1 ended not with resolution, but with escalation. The Islamabad MoU that was supposed to close the conflict lasted less than"
+  },
+  {
+   "id": "dc-008",
+   "series_id": "desert-capital",
+   "title": "What the Queue Looks Like from Abu Dhabi",
+   "display_title": "What the Queue Looks Like from Abu Dhabi",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-07-16",
+   "read_min": 6,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/what-the-queue-looks-like-from-abu",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/3d7212f6-5d39-4ec2-ace4-6a54bd9c0062_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The final piece in this series arrives at a moment of genuine transition . The Islamabad MoU, that promised a hope for some peace, is now at a weak footing. Our recent field note highlights the extent"
+  },
+  {
+   "id": "dc-009",
+   "series_id": "desert-capital",
+   "title": "Is the Ceasefire Over?",
+   "display_title": "Is the Ceasefire Over?",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-07-15",
+   "read_min": 2,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/is-the-ceasefire-over",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/04477dbf-ce12-4fc4-93b8-c987155f8781_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "It’s been the most volatile stretch yet in the US-Iran standoff. It started when the US launched fresh strikes after Iran attacked commercial ships and a Qatari LNG tanker near the Strait of Hormuz. C"
+  },
+  {
+   "id": "dc-010",
+   "series_id": "desert-capital",
+   "title": "The Second Backlog",
+   "display_title": "The Second Backlog",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-07-14",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-second-backlog",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/b030aaaf-0b29-4480-bd27-42f012058b4e_5000x2625.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "No firm power without firm fuel, and firm fuel is a contract, not a resource estimate. Richard’s Take Everybody racing to lock a gas turbine slot is solving the first problem and calling it done. Ther"
+  },
+  {
+   "id": "dc-011",
+   "series_id": "desert-capital",
+   "title": "The Desert Express: Etihad Rail and the Reshaping of the UAE",
+   "display_title": "The Desert Express: Etihad Rail and the Reshaping of the UAE",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-07-02",
+   "read_min": 4,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-desert-express-etihad-rail-and",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/9e927f28-a766-46ca-87d3-b362f2cd194e_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": true,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "For the past few years, Fujairah has been an annual fixture for me, thanks to the Energy Markets Forum that Gulf Intelligence runs there. Every visit followed the same pattern: fly or drive in, then h"
+  },
+  {
+   "id": "dc-012",
+   "series_id": "desert-capital",
+   "title": "The Speed of Trust",
+   "display_title": "The Speed of Trust",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-07-01",
+   "read_min": 6,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-speed-of-trust",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/6c0fb58a-aada-4ec8-892f-98708be18a9b_5000x2625.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "Energy infrastructure &#215; AI convergence, from the rooms where it’s actually being built. Richard’s Take Everyone in this buildout is selling speed. Faster permits, faster interconnects, faster mod"
+  },
+  {
+   "id": "dc-013",
+   "series_id": "desert-capital",
+   "title": "Capital Has No Curfew",
+   "display_title": "Capital Has No Curfew",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-06-24",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/capital-has-no-curfew",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/e18ae5a2-f4f5-44c6-9845-ae1f71918fa3_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": true,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "We are now in the final stretch of this series, and before you ask, yes, there will be more. This particular run ends in two parts. Part one, which you are reading now, is about something I found genu"
+  },
+  {
+   "id": "dc-014",
+   "series_id": "desert-capital",
+   "title": "The Story Behind the U.S.-Iran MOU",
+   "display_title": "The Story Behind the U.S.-Iran MOU",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-06-17",
+   "read_min": 4,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-us-iran-mou",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/a712590b-1047-4296-aecd-31711738003b_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "So a deal has been signed, sort of. On June 15, Trump and Vance virtually signed a memorandum of understanding with Iran , with Iran’s Parliament Speaker Mohammad Bagher Ghalibaf putting his name on i"
+  },
+  {
+   "id": "cc-005",
+   "series_id": "clearsync-connect",
+   "title": "That Is Not a Microgrid. That Is a Grid.",
+   "display_title": "That Is Not a Microgrid. That Is a Grid.",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-06-16",
+   "read_min": 5,
+   "verticals": [
+    "Power",
+    "Data"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/that-is-not-a-microgrid-that-is-a",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/b097dd8d-d488-4c90-a411-ec5790c88199_5000x2625.png",
+   "thumb_label": "CC",
+   "start_here": false,
+   "featured": true,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "Richard’s Take Everyone is announcing microgrids. Subscribe for free and stay up to date with our latest insights. Developers, data center operators, corporate energy teams are all showing up with mic"
+  },
+  {
+   "id": "dc-015",
+   "series_id": "desert-capital",
+   "title": "The UAE Was Already in the U.S.",
+   "display_title": "The UAE Was Already in the U.S.",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-06-10",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-uae-was-already-in-the-us",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/b6322190-a069-4eaa-beae-4b6d174b2c79_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "So far in this series we have looked at how international capital behaved inside the UAE during the war: who stayed, what held, and what it says about Abu Dhabi as an investment destination. But the r"
+  },
+  {
+   "id": "cc-006",
+   "series_id": "clearsync-connect",
+   "title": "ClearSync Connect — Issue 1",
+   "display_title": "ClearSync Connect — Issue 1",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-06-02",
+   "read_min": 4,
+   "verticals": [
+    "Power",
+    "Data"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/clearsync-connect-issue-1",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/567eb938-ef1b-466e-bea1-1b8c617efbd4_5000x2625.png",
+   "thumb_label": "CC",
+   "start_here": true,
+   "featured": true,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "About ClearSync Connect The energy and AI infrastructure markets are moving fast and getting louder. More announcements, more capital, more companies showing up with decks and renderings and not much "
+  },
+  {
+   "id": "dc-016",
+   "series_id": "desert-capital",
+   "title": "Clearing the Confusion on the US-Iran Deal",
+   "display_title": "Clearing the Confusion on the US-Iran Deal",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-06-01",
+   "read_min": 3,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/clearing-the-confusion-on-the-us",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/05b97ced-079b-4196-af95-705e6f985f23_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "As of 1 June, the proposed US-Iran arrangement remains an unfinished framework rather than a settled peace deal. Washington and Tehran have discussed a 60-day ceasefire extension, reopening the Strait"
+  },
+  {
+   "id": "dc-017",
+   "series_id": "desert-capital",
+   "title": "The Easiest Move Was to Leave",
+   "display_title": "The Easiest Move Was to Leave",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-05-27",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-easiest-move-was-to-leave",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/dc34b202-6e2c-4f14-bdae-e91650b0b4f9_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "We are now four pieces into this series. We have written about the pipeline that kept UAE crude moving when Hormuz closed, the $150 billion capital plan that survived drone strikes on the facility whe"
+  },
+  {
+   "id": "dc-018",
+   "series_id": "desert-capital",
+   "title": "Explainer: The UAE's Second Hormuz Bypass Pipeline",
+   "display_title": "Explainer: The UAE's Second Hormuz Bypass Pipeline",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-05-18",
+   "read_min": 3,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/explainer-the-uaes-second-hormuz",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/efd527bc-9ac5-40d7-8583-318f075a21af_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": true,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The UAE announced on May 15, 2026 that ADNOC is fast-tracking a second crude oil pipeline to the port of Fujairah, aiming to double bypass export capacity by 2027. Bloomberg confirmed the project woul"
+  },
+  {
+   "id": "dc-019",
+   "series_id": "desert-capital",
+   "title": "$150 Billion and a Drone Strike",
+   "display_title": "$150 Billion and a Drone Strike",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-05-13",
+   "read_min": 6,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/150-billion-and-a-drone-strike",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/6e61a1c9-e921-42eb-b6b0-b3eb6f69ea72_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The first two pieces in this series looked at how the UAE’s energy infrastructure held up when the Strait of Hormuz closed, the Fujairah pipeline that kept crude moving, and the port that absorbed six"
+  },
+  {
+   "id": "dc-020",
+   "series_id": "desert-capital",
+   "title": "Fujairah - More Relevant Than Ever",
+   "display_title": "Fujairah - More Relevant Than Ever",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-05-05",
+   "read_min": 3,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/fujairah-more-relevant-than-ever",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/cf02e959-7893-4183-90b5-dd9416b0a22b_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "On May 4, 2026, Iranian drones and missiles struck the Fujairah Oil Industry Zone , igniting a fire at storage facilities and injuring three Indian nationals. Separately, two drones hit the ADNOC-owne"
+  },
+  {
+   "id": "dc-021",
+   "series_id": "desert-capital",
+   "title": "The Bypass Nobody Built for This War.",
+   "display_title": "The Bypass Nobody Built for This War.",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-04-29",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-bypass-nobody-built-for-this",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/09a94bbb-32a0-4d32-9b75-32ef9eee12e7_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "There is a particular kind of foresight that only gets recognized in hindsight. Nobody calls it a strategy when you are spending $4.2 billion on a pipeline through a desert during a period of relative"
+  },
+  {
+   "id": "dc-022",
+   "series_id": "desert-capital",
+   "title": "The UAE Just Left the Room",
+   "display_title": "The UAE Just Left the Room",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-04-28",
+   "read_min": 3,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-uae-just-left-the-room",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/fb4162e6-0a61-470f-8309-5c1a18005dd5_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "What happened this morning in Vienna is a structural break in how the Middle East manages its oil wealth, comes in the middle of the worst supply shock the energy market has ever recorded , and carrie"
+  }
+ ]
 }

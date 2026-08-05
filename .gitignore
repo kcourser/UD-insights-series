@@ -4,3 +4,5 @@ __pycache__/
 *.pyc
 .idea/
 .vscode/
+sync.log
+series.json.bak
