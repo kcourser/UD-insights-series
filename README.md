@@ -1,8 +1,6 @@
 # UPRT+ Insights Series Browser
 
-**Repo:** https://github.com/kcourser/UD-insights-series (**private**)
-
-> Private repos cannot be loaded by public jsDelivr in Webflow. Paste the embed HTML or host `series.json` yourself for production.  
+**Repo:** https://github.com/kcourser/UD-insights-series (**public**)  
 
 Interactive **Substack series intro** for the UD 2026 site (Webflow embed).
 

@@ -35,13 +35,13 @@ Series cards → horizontal article rail (thumb + one-liner)
 
 ## Where files live
 
-**GitHub (Claude-friendly):** https://github.com/kcourser/UD-insights-series (**private** as of 2026-08-04)  
+**GitHub (Claude-friendly):** https://github.com/kcourser/UD-insights-series (**public**)  
 
-**Claude access:** Claude must use a GitHub-authenticated session / be invited as collaborator on `kcourser` repos — public raw/jsDelivr URLs will not stay reliable for private repos.
-
-**Do not use jsDelivr for production Webflow** while private (CDN is public-only). Options:
-1. **Paste** full `ud-insights-series.html` into Webflow Embed and host `series.json` as a Webflow asset / secure endpoint  
-2. Or keep a **public** `*-cdn` fork later if you want jsDelivr again  
+**Raw / CDN:**
+- HTML: https://cdn.jsdelivr.net/gh/kcourser/UD-insights-series@main/ud-insights-series.html  
+- JS: https://cdn.jsdelivr.net/gh/kcourser/UD-insights-series@main/ud-insights-series.js  
+- Data: https://cdn.jsdelivr.net/gh/kcourser/UD-insights-series@main/series.json  
+- Handoff: https://github.com/kcourser/UD-insights-series/blob/main/HANDOFF-to-Claude.md  
 
 **Mac / OneDrive checkout:**
 ```
@@ -61,19 +61,24 @@ PARA: `02 Projects/Upright Digital/website-insights-series.md`
 6. Give the section enough height (~720px desktop; embed is responsive).
 7. Do **not** nest the embed inside a tiny fixed-height div that clips the panel.
 
-### Webflow embed (repo is **private**)
-
-**Preferred while private:** paste entire `ud-insights-series.html` into the Embed, and point `data-series-url` at a file you control (Webflow hosted JSON, or paste data inline later).
-
-jsDelivr / raw GitHub URLs are **not** a production path for private repos (no public CDN).
-
-If you temporarily need the old public mount shape for local tests only:
+### Webflow embed (repo is **public**)
 
 ```html
 <div id="ud-insights-mount"
-     data-series-url="SERIES_JSON_URL_YOU_HOST"></div>
-<script src="PATH_OR_PASTED_LOADER" defer></script>
+     data-series-url="https://cdn.jsdelivr.net/gh/kcourser/UD-insights-series@main/series.json"></div>
+<script
+  src="https://cdn.jsdelivr.net/gh/kcourser/UD-insights-series@main/ud-insights-series.js"
+  defer></script>
 ```
+
+Same pattern as podcast:
+
+```html
+<div id="uprt-network-mount"></div>
+<script src="https://cdn.jsdelivr.net/gh/kcourser/UD-podcast-network@main/uprt-network-ud.js" defer></script>
+```
+
+**Alt:** paste entire contents of `ud-insights-series.html` into the Embed.
 
 ## What Claude should NOT do
 
