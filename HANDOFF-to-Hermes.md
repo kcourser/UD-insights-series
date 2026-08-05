@@ -63,6 +63,70 @@ Suggested split:
 If you'd rather own the trigger too, take it — just retire the crontab line at the
 bottom of `run-sync.sh` so the job doesn't run twice.
 
+## Deferred from v1 — design system reconciliation
+
+**Status 2026-08-05:** the embed is placed on `/media` (Webflow, `ud-insights-embed`
+wrapper containing `#ud-insights-mount`) but set to `display: none`. Markup and data
+attributes are intact; unhiding is a one-property change.
+
+### Why
+
+Side by side with the page, the embed reads as a different design system. Specific
+mismatches Kevin flagged:
+
+- **Too dark.** The embed's `#01060F` base is deeper than the page's section
+  background, so the module sits in a visible well rather than on the page.
+- **Rounded corners.** Card radii don't match the site's `ud-card`.
+- **Different CTAs.** The embed's buttons don't match `ud-btn` / `ud-btn-line`.
+- **Images are hard to control** (see below).
+
+This is not a taste disagreement. The embed was matched to the podcast graph's v7-UD
+tokens; the Webflow site has its own class system (`ud-card`, `ud-btn`, `ud-h2`,
+`ud-section`, `ud-container`, `ud-eyebrow`). Both are "on brand" against different
+references. Nobody had them on one screen until now.
+
+### The ask — inherit, don't repaint
+
+Repainting to today's hex values recreates the same drift the next time the site
+changes. Instead:
+
+1. **Consume CSS custom properties from the page** rather than hard-coding. Read
+   `--ud-*` vars off `:root` / the wrapper, with the current values as fallbacks:
+
+   ```css
+   background: var(--ud-surface, #0F1B35);
+   border-radius: var(--ud-radius-card, 4px);
+   ```
+
+2. **Match the existing component classes.** Cards should read as `ud-card`; the
+   "Read on Substack" CTA should read as `ud-btn ud-btn-line` — same radius, weight,
+   border treatment, hover.
+
+3. **Don't set a background on the module root.** Let the section behind it show
+   through. That alone fixes "too dark."
+
+The navy vs. black decision is settled (navy — the campaign hero has no black in it),
+but inheriting means the embed follows if that ever changes.
+
+### Images
+
+`series.json.image` is populated from Substack `cover_image` and is RSS-owned, so the
+weekly sync overwrites any manual edit. Proposed fix, mirroring `display_title`:
+
+- Add **`display_image`** — wins over `image` when set, never touched by sync.
+- Embed reads `display_image || image`.
+
+One-line change in `sync_series.py` (add to the human-owned set) plus the fallback in
+the embed.
+
+### Not blocking v1
+
+The live section ships with two static series cards and "Read on Substack" — coherent
+and on-brand. The interactive rail is depth, not table stakes. The data pipeline is
+done and keeps refreshing weekly regardless of what renders it.
+
+
+
 ## Also unresolved
 
 - **Substack sections aren't configured.** No `/feed/s/<slug>` endpoints, and the main
