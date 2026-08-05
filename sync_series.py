@@ -58,7 +58,15 @@ NS = {
     "content": "http://purl.org/rss/1.0/modules/content/",
     "dc": "http://purl.org/dc/elements/1.1/",
 }
-UA = {"User-Agent": "Mozilla/5.0 (compatible; UD-insights-bot/1.0)"}
+UA = {
+    "User-Agent": ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                   "AppleWebKit/537.36 (KHTML, like Gecko) "
+                   "Chrome/126.0.0.0 Safari/537.36"),
+    "Accept": "application/rss+xml, application/xml, text/xml, */*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "identity",
+    "Connection": "close",
+}
 
 # Fields this script is allowed to overwrite. Everything else is preserved.
 RSS_OWNED = ("title", "date", "substack_url", "read_min", "image")
@@ -126,6 +134,39 @@ def parse_feed(xml_bytes, series_hint=None):
     return items
 
 
+def parse_archive(raw, series_hint=None):
+    """Fallback source: Substack's archive JSON, used when /feed returns 403."""
+    posts = json.loads(raw)
+    items = []
+    for p in posts:
+        if p.get("audience") not in (None, "everyone", "only_paid", "founding"):
+            continue
+        body = p.get("description") or p.get("subtitle") or ""
+        wc = p.get("wordcount") or 0
+        items.append({
+            "title": (p.get("title") or "").strip(),
+            "date": (p.get("post_date") or "")[:10],
+            "substack_url": p.get("canonical_url") or "",
+            "read_min": max(1, round(wc / 225)) if wc else 3,
+            "image": p.get("cover_image") or "",
+            "author": "",
+            "categories": [t.get("name", "") for t in (p.get("postTags") or [])],
+            "_series_hint": series_hint,
+            "_excerpt": strip_html(body)[:200],
+        })
+    return [i for i in items if i["title"] and i["substack_url"]]
+
+
+def fetch_posts(series_hint=None):
+    """RSS first; fall back to the archive API if Substack blocks the feed."""
+    try:
+        return parse_feed(fetch(f"{PUBLICATION}/feed"), series_hint), "rss"
+    except Exception as e:
+        print(f"  /feed unavailable ({e}); trying archive API", file=sys.stderr)
+    url = f"{PUBLICATION}/api/v1/archive?sort=new&offset=0&limit=50"
+    return parse_archive(fetch(url), series_hint), "archive-api"
+
+
 def gather(series_defs):
     """Pull section feeds where they exist, then the main feed. Returns (items, sources)."""
     items, seen, sources = [], set(), {}
@@ -147,11 +188,16 @@ def gather(series_defs):
                     seen.add(it["substack_url"])
                     items.append(it)
 
-    for it in parse_feed(fetch(f"{PUBLICATION}/feed")):
+    main_items, how = fetch_posts()
+    for it in main_items:
         if it["substack_url"] not in seen:
             seen.add(it["substack_url"])
             items.append(it)
-    sources.setdefault("_main", f"{PUBLICATION}/feed")
+    sources.setdefault("_main", how)
+
+    if not items:
+        raise SystemExit("ERROR: no posts retrieved from Substack (blocked or empty). "
+                         "Nothing written.")
     return items, sources
 
 
