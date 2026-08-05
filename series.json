@@ -48,7 +48,7 @@
    ],
    "accent": "#4DA9F0",
    "substack_home": "https://uprightdigital.substack.com",
-   "updated": "2026-06-16"
+   "updated": "2026-07-29"
   }
  ],
  "articles": [
@@ -57,8 +57,12 @@
    "series_id": "desert-capital",
    "title": "The UAE Is Exporting More Than Oil Now",
    "display_title": "The UAE Is Exporting More Than Oil Now",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "The UAE's newest export isn't oil. It's the operating system around it.",
+   "summary_bullets": [
+    "What Abu Dhabi is packaging and selling beyond hydrocarbons and real estate",
+    "How operating models travel as exportable products",
+    "Why this reframes the UAE's role in markets it doesn't produce in"
+   ],
    "date": "2026-08-04",
    "read_min": 3,
    "verticals": [
@@ -71,29 +75,31 @@
    "start_here": true,
    "featured": true,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "The UAE’s New Export: Operating Systems, Not Just Oil Most people, when they think about what the UAE sells to the rest of the world, think about oil, or maybe real estate and tourism by now. What’s l"
   },
   {
    "id": "dc-006",
-   "series_id": "desert-capital",
+   "series_id": "clearsync-connect",
    "title": "The Permission Problem",
    "display_title": "The Permission Problem",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "Chips, power, capital. There's a fourth input, and it's the one that stops projects.",
+   "summary_bullets": [
+    "Why the three-input model for AI buildout is already out of date",
+    "How permission — regulatory, community, political — became the binding constraint",
+    "Where projects with secured capital and hardware are stalling anyway"
+   ],
    "date": "2026-07-29",
    "read_min": 5,
    "verticals": [
-    "Oil & Gas",
-    "Middle East"
+    "Power",
+    "AI & Tech"
    ],
    "substack_url": "https://uprightdigital.substack.com/p/the-permission-problem",
    "image": "https://substack-post-media.s3.amazonaws.com/public/images/b69fe1bf-fcb6-487a-9f3d-306b9c2b55a9_5000x2625.png",
-   "thumb_label": "DC",
+   "thumb_label": "CC",
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "The Fourth Input: Permission For two years, this buildout got priced on three inputs: chips, power, capital. Get those three lined up and the rest was execution. That model is already out of date. The"
   },
   {
@@ -101,8 +107,12 @@
    "series_id": "desert-capital",
    "title": "How Do You Price a Chokepoint Nobody Controls?",
    "display_title": "How Do You Price a Chokepoint Nobody Controls?",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "Phase Two opens where Phase One ended — with escalation, not settlement.",
+   "summary_bullets": [
+    "Why the Islamabad MoU lasted a fraction of its intended term",
+    "How to price a chokepoint no single party controls",
+    "What the next phase of coverage will track"
+   ],
    "date": "2026-07-28",
    "read_min": 5,
    "verticals": [
@@ -115,7 +125,6 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "The Conflict Enters a New Phase Phase 2 of Desert Capital opens where Phase 1 ended not with resolution, but with escalation. The Islamabad MoU that was supposed to close the conflict lasted less than"
   },
   {
@@ -123,8 +132,12 @@
    "series_id": "desert-capital",
    "title": "What the Queue Looks Like from Abu Dhabi",
    "display_title": "What the Queue Looks Like from Abu Dhabi",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "Phase One closes at a moment of genuine transition, not resolution.",
+   "summary_bullets": [
+    "Why the Islamabad MoU is on weaker footing than its announcement suggested",
+    "What field reporting shows about conditions on the ground",
+    "The through-line connecting eight months of infrastructure and capital coverage"
+   ],
    "date": "2026-07-16",
    "read_min": 6,
    "verticals": [
@@ -137,7 +150,6 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "The final piece in this series arrives at a moment of genuine transition . The Islamabad MoU, that promised a hope for some peace, is now at a weak footing. Our recent field note highlights the extent"
   },
   {
@@ -145,8 +157,12 @@
    "series_id": "desert-capital",
    "title": "Is the Ceasefire Over?",
    "display_title": "Is the Ceasefire Over?",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "Fresh US strikes, attacks on commercial shipping, a Qatari LNG tanker hit.",
+   "summary_bullets": [
+    "The sequence that reopened hostilities after the ceasefire framework",
+    "What targeting LNG shipping signals about escalation thresholds",
+    "Where the strait stands for operators with cargo committed"
+   ],
    "date": "2026-07-15",
    "read_min": 2,
    "verticals": [
@@ -159,29 +175,31 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "It’s been the most volatile stretch yet in the US-Iran standoff. It started when the US launched fresh strikes after Iran attacked commercial ships and a Qatari LNG tanker near the Strait of Hormuz. C"
   },
   {
    "id": "dc-010",
-   "series_id": "desert-capital",
+   "series_id": "clearsync-connect",
    "title": "The Second Backlog",
    "display_title": "The Second Backlog",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "Locking a turbine slot solves the first problem. The fuel contract is the second.",
+   "summary_bullets": [
+    "Why firm power requires firm fuel, and firm fuel is a contract not a reserve estimate",
+    "The second backlog forming behind the turbine queue everyone is watching",
+    "What gas supply exposure looks like on a project already declared financed"
+   ],
    "date": "2026-07-14",
    "read_min": 5,
    "verticals": [
-    "Oil & Gas",
-    "Middle East"
+    "Power",
+    "AI & Tech"
    ],
    "substack_url": "https://uprightdigital.substack.com/p/the-second-backlog",
    "image": "https://substack-post-media.s3.amazonaws.com/public/images/b030aaaf-0b29-4480-bd27-42f012058b4e_5000x2625.png",
-   "thumb_label": "DC",
+   "thumb_label": "CC",
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "No firm power without firm fuel, and firm fuel is a contract, not a resource estimate. Richard’s Take Everybody racing to lock a gas turbine slot is solving the first problem and calling it done. Ther"
   },
   {
@@ -189,8 +207,12 @@
    "series_id": "desert-capital",
    "title": "The Desert Express: Etihad Rail and the Reshaping of the UAE",
    "display_title": "The Desert Express: Etihad Rail and the Reshaping of the UAE",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "Etihad Rail is quietly rewriting how goods and people move across the UAE.",
+   "summary_bullets": [
+    "How rail changes the Fujairah corridor for freight and energy logistics",
+    "What compressed transit times mean for port economics and industrial siting",
+    "Why the network reads as infrastructure strategy, not transport policy"
+   ],
    "date": "2026-07-02",
    "read_min": 4,
    "verticals": [
@@ -203,29 +225,31 @@
    "start_here": false,
    "featured": true,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "For the past few years, Fujairah has been an annual fixture for me, thanks to the Energy Markets Forum that Gulf Intelligence runs there. Every visit followed the same pattern: fly or drive in, then h"
   },
   {
    "id": "dc-012",
-   "series_id": "desert-capital",
+   "series_id": "clearsync-connect",
    "title": "The Speed of Trust",
    "display_title": "The Speed of Trust",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "Everyone in this buildout is selling speed. Trust is the input nobody prices.",
+   "summary_bullets": [
+    "Why faster permits and modular builds still stall on counterparty confidence",
+    "How trust compounds across interconnects, offtake, and capital in sequence",
+    "Where speed claims break down between announcement and energization"
+   ],
    "date": "2026-07-01",
    "read_min": 6,
    "verticals": [
-    "Oil & Gas",
-    "Middle East"
+    "Power",
+    "AI & Tech"
    ],
    "substack_url": "https://uprightdigital.substack.com/p/the-speed-of-trust",
    "image": "https://substack-post-media.s3.amazonaws.com/public/images/6c0fb58a-aada-4ec8-892f-98708be18a9b_5000x2625.png",
-   "thumb_label": "DC",
+   "thumb_label": "CC",
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "Energy infrastructure &#215; AI convergence, from the rooms where it’s actually being built. Richard’s Take Everyone in this buildout is selling speed. Faster permits, faster interconnects, faster mod"
   },
   {
@@ -233,8 +257,12 @@
    "series_id": "desert-capital",
    "title": "Capital Has No Curfew",
    "display_title": "Capital Has No Curfew",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "Capital kept moving through the war. That's the finding worth sitting with.",
+   "summary_bullets": [
+    "Which deals closed on schedule while the conflict was active",
+    "What continuity under disruption reveals about Gulf market depth",
+    "Why the pattern challenges assumptions about regional risk premia"
+   ],
    "date": "2026-06-24",
    "read_min": 5,
    "verticals": [
@@ -247,7 +275,6 @@
    "start_here": false,
    "featured": true,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "We are now in the final stretch of this series, and before you ask, yes, there will be more. This particular run ends in two parts. Part one, which you are reading now, is about something I found genu"
   },
   {
@@ -255,8 +282,12 @@
    "series_id": "desert-capital",
    "title": "The Story Behind the U.S.-Iran MOU",
    "display_title": "The Story Behind the U.S.-Iran MOU",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "A memorandum got signed on June 15. What it actually commits anyone to is thinner.",
+   "summary_bullets": [
+    "Who signed, in what capacity, and what that says about enforceability",
+    "The gap between an MOU and a binding settlement",
+    "What has to happen next for the framework to hold"
+   ],
    "date": "2026-06-17",
    "read_min": 4,
    "verticals": [
@@ -269,7 +300,6 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "So a deal has been signed, sort of. On June 15, Trump and Vance virtually signed a memorandum of understanding with Iran , with Iran’s Parliament Speaker Mohammad Bagher Ghalibaf putting his name on i"
   },
   {
@@ -277,8 +307,12 @@
    "series_id": "clearsync-connect",
    "title": "That Is Not a Microgrid. That Is a Grid.",
    "display_title": "That Is Not a Microgrid. That Is a Grid.",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "Everyone is announcing microgrids. Most of what's being announced isn't one.",
+   "summary_bullets": [
+    "The definitional slippage letting grid-tied projects claim microgrid status",
+    "Why the distinction decides who carries reliability risk when the grid fails",
+    "What data center operators and corporate energy teams should ask developers"
+   ],
    "date": "2026-06-16",
    "read_min": 5,
    "verticals": [
@@ -291,7 +325,6 @@
    "start_here": false,
    "featured": true,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "Richard’s Take Everyone is announcing microgrids. Subscribe for free and stay up to date with our latest insights. Developers, data center operators, corporate energy teams are all showing up with mic"
   },
   {
@@ -299,8 +332,12 @@
    "series_id": "desert-capital",
    "title": "The UAE Was Already in the U.S.",
    "display_title": "The UAE Was Already in the U.S.",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "The capital flow everyone missed runs the other direction.",
+   "summary_bullets": [
+    "How much UAE capital was already deployed inside the United States",
+    "Why the reverse flow reframes Abu Dhabi as allocator rather than destination",
+    "What that positioning survives when regional conflict escalates"
+   ],
    "date": "2026-06-10",
    "read_min": 5,
    "verticals": [
@@ -313,7 +350,6 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "So far in this series we have looked at how international capital behaved inside the UAE during the war: who stayed, what held, and what it says about Abu Dhabi as an investment destination. But the r"
   },
   {
@@ -321,8 +357,12 @@
    "series_id": "clearsync-connect",
    "title": "ClearSync Connect — Issue 1",
    "display_title": "ClearSync Connect — Issue 1",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "The energy and AI infrastructure market got loud. This is the filter.",
+   "summary_bullets": [
+    "Why announcement volume has decoupled from actual delivered capacity",
+    "What separates a rendering from a project with a signed interconnect",
+    "The questions Richard asks before treating a buildout claim as real"
+   ],
    "date": "2026-06-02",
    "read_min": 4,
    "verticals": [
@@ -335,7 +375,6 @@
    "start_here": true,
    "featured": true,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "About ClearSync Connect The energy and AI infrastructure markets are moving fast and getting louder. More announcements, more capital, more companies showing up with decks and renderings and not much "
   },
   {
@@ -343,8 +382,12 @@
    "series_id": "desert-capital",
    "title": "Clearing the Confusion on the US-Iran Deal",
    "display_title": "Clearing the Confusion on the US-Iran Deal",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "The US-Iran arrangement is an unfinished framework, not a settled peace.",
+   "summary_bullets": [
+    "What a 60-day ceasefire extension does and does not commit either side to",
+    "Which Hormuz reopening provisions remain unresolved",
+    "How to read the framework without pricing in a resolution that hasn't happened"
+   ],
    "date": "2026-06-01",
    "read_min": 3,
    "verticals": [
@@ -357,7 +400,6 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "As of 1 June, the proposed US-Iran arrangement remains an unfinished framework rather than a settled peace deal. Washington and Tehran have discussed a 60-day ceasefire extension, reopening the Strait"
   },
   {
@@ -365,8 +407,12 @@
    "series_id": "desert-capital",
    "title": "The Easiest Move Was to Leave",
    "display_title": "The Easiest Move Was to Leave",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "The easiest move was to leave. Tracking who did, and what it cost them.",
+   "summary_bullets": [
+    "How international operators and capital behaved once the shooting started",
+    "What departure cost in re-entry terms once conditions stabilized",
+    "Why the stay-or-go decision separated relationship depth from transactional presence"
+   ],
    "date": "2026-05-27",
    "read_min": 5,
    "verticals": [
@@ -379,7 +425,6 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "We are now four pieces into this series. We have written about the pipeline that kept UAE crude moving when Hormuz closed, the $150 billion capital plan that survived drone strikes on the facility whe"
   },
   {
@@ -387,8 +432,12 @@
    "series_id": "desert-capital",
    "title": "Explainer: The UAE's Second Hormuz Bypass Pipeline",
    "display_title": "Explainer: The UAE's Second Hormuz Bypass Pipeline",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "ADNOC is fast-tracking a second Fujairah line to double bypass capacity by 2027.",
+   "summary_bullets": [
+    "Scope, timeline, and what doubling bypass capacity actually delivers",
+    "Why the second line is being built now rather than after the conflict",
+    "What it changes for buyers pricing Hormuz exposure into term contracts"
+   ],
    "date": "2026-05-18",
    "read_min": 3,
    "verticals": [
@@ -401,7 +450,6 @@
    "start_here": false,
    "featured": true,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "The UAE announced on May 15, 2026 that ADNOC is fast-tracking a second crude oil pipeline to the port of Fujairah, aiming to double bypass export capacity by 2027. Bloomberg confirmed the project woul"
   },
   {
@@ -409,8 +457,12 @@
    "series_id": "desert-capital",
    "title": "$150 Billion and a Drone Strike",
    "display_title": "$150 Billion and a Drone Strike",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "A $150 billion capital plan, tested by drone strikes on the facilities it funds.",
+   "summary_bullets": [
+    "Which commitments held and which were quietly repriced",
+    "How the UAE's capital program absorbed direct physical attack",
+    "What sustained allocation under fire signals to inbound investors"
+   ],
    "date": "2026-05-13",
    "read_min": 6,
    "verticals": [
@@ -423,7 +475,6 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "The first two pieces in this series looked at how the UAE’s energy infrastructure held up when the Strait of Hormuz closed, the Fujairah pipeline that kept crude moving, and the port that absorbed six"
   },
   {
@@ -431,8 +482,12 @@
    "series_id": "desert-capital",
    "title": "Fujairah - More Relevant Than Ever",
    "display_title": "Fujairah - More Relevant Than Ever",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "Drones hit the Fujairah Oil Industry Zone. The port matters more now, not less.",
+   "summary_bullets": [
+    "What the May 4 strikes damaged, and what kept operating",
+    "Why Fujairah's role expands precisely because it was targeted",
+    "How storage and bypass capacity absorb shocks the strait cannot"
+   ],
    "date": "2026-05-05",
    "read_min": 3,
    "verticals": [
@@ -445,7 +500,6 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "On May 4, 2026, Iranian drones and missiles struck the Fujairah Oil Industry Zone , igniting a fire at storage facilities and injuring three Indian nationals. Separately, two drones hit the ADNOC-owne"
   },
   {
@@ -453,8 +507,12 @@
    "series_id": "desert-capital",
    "title": "The Bypass Nobody Built for This War.",
    "display_title": "The Bypass Nobody Built for This War.",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "A $4.2bn pipeline built in peacetime became the reason UAE crude kept moving.",
+   "summary_bullets": [
+    "How the Fujairah bypass was capitalized before there was a war to justify it",
+    "What it means to hold export capacity that routes around a closed strait",
+    "The infrastructure lesson: strategic redundancy only reads as foresight later"
+   ],
    "date": "2026-04-29",
    "read_min": 5,
    "verticals": [
@@ -467,7 +525,6 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "There is a particular kind of foresight that only gets recognized in hindsight. Nobody calls it a strategy when you are spending $4.2 billion on a pipeline through a desert during a period of relative"
   },
   {
@@ -475,8 +532,12 @@
    "series_id": "desert-capital",
    "title": "The UAE Just Left the Room",
    "display_title": "The UAE Just Left the Room",
-   "one_liner": "",
-   "summary_bullets": [],
+   "one_liner": "A structural break in how the Middle East manages its oil wealth, mid-supply-shock.",
+   "summary_bullets": [
+    "What the Vienna decision changes about UAE production autonomy",
+    "Why it lands during the most severe supply disruption on record",
+    "The signal for operators and investors positioned around OPEC discipline"
+   ],
    "date": "2026-04-28",
    "read_min": 3,
    "verticals": [
@@ -489,7 +550,6 @@
    "start_here": false,
    "featured": false,
    "paired_episode_id": "",
-   "needs_editorial": true,
    "_excerpt": "What happened this morning in Vienna is a structural break in how the Middle East manages its oil wealth, comes in the middle of the worst supply shock the energy market has ever recorded , and carrie"
   }
  ]
