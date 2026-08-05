@@ -1,0 +1,335 @@
+#!/usr/bin/env python3
+"""
+sync_series.py — merge the live Upright Digital Substack feed into series.json
+
+Emits the UPRT+ Insights Series data contract owned by Hermes CTO
+(kcourser/UD-insights-series). Non-destructive by design:
+
+    RSS owns   : title, date, substack_url, read_min, image
+    Humans own : one_liner, summary_bullets, verticals, thumb_label,
+                 display_title (once customized), paired_episode_id
+    Code owns  : start_here / featured, via the CURATION map below, so the
+                 editor's cut survives every scheduled run
+    Never lost : any field already present that this script does not manage,
+                 including keys added to the contract later
+
+Stdlib only. No API key. Runs on a GitHub Actions runner.
+
+Usage:
+    python3 sync_series.py --inspect                       # report only
+    python3 sync_series.py --default-series desert-capital # merge (+ .bak)
+    python3 sync_series.py --prune-demo                    # also drop demo rows
+"""
+
+import argparse
+import json
+import re
+import shutil
+import sys
+import urllib.request
+from datetime import datetime, timezone
+from xml.etree import ElementTree as ET
+
+PUBLICATION = "https://uprightdigital.substack.com"
+DEFAULT_PATH = "series.json"
+
+# Substack section slugs, if the series are configured as sections.
+# Unreachable slugs fall back to the main feed + name matching.
+SECTION_SLUGS = {
+    "desert-capital": "desert-capital",
+    "clearsync-connect": "clearsync-connect",
+}
+
+# Editor's cut. Applied on every run so curation survives automation.
+# Key on a distinctive lowercase fragment of the title.
+CURATION = {
+    "exporting more than oil":  {"start_here": True, "featured": True},
+    "issue 1":                  {"start_here": True, "featured": True},
+    "hormuz bypass":            {"featured": True},
+    "desert express":           {"featured": True},
+    "capital has no curfew":    {"featured": True},
+    "not a microgrid":          {"featured": True},
+}
+
+# Placeholder markers left by the prototype
+DEMO_URLS = {"https://substack.com/", "https://substack.com", ""}
+
+NS = {
+    "content": "http://purl.org/rss/1.0/modules/content/",
+    "dc": "http://purl.org/dc/elements/1.1/",
+}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; UD-insights-bot/1.0)"}
+
+# Fields this script is allowed to overwrite. Everything else is preserved.
+RSS_OWNED = ("title", "date", "substack_url", "read_min", "image")
+
+
+# ---------- feed ----------
+
+def fetch(url):
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return r.read()
+
+
+def _text(el, path, ns=None):
+    n = el.find(path, ns or {})
+    return (n.text or "").strip() if n is not None and n.text else ""
+
+
+def strip_html(html):
+    html = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html, flags=re.S | re.I)
+    html = re.sub(r"<[^>]+>", " ", html)
+    for pat, rep in ((r"&nbsp;?", " "), (r"&amp;", "&"),
+                     (r"&#8217;|&rsquo;", "\u2019"), (r"&#8212;|&mdash;", "\u2014")):
+        html = re.sub(pat, rep, html)
+    return re.sub(r"\s+", " ", html).strip()
+
+
+def to_iso(pubdate):
+    for fmt in ("%a, %d %b %Y %H:%M:%S %z", "%a, %d %b %Y %H:%M:%S %Z"):
+        try:
+            return datetime.strptime(pubdate, fmt).astimezone(timezone.utc).date().isoformat()
+        except ValueError:
+            pass
+    return pubdate[:10]
+
+
+def norm_title(t):
+    """Loose key for matching hand-authored rows to feed items."""
+    t = re.sub(r"[\u2018\u2019\u201c\u201d]", "", t.lower())
+    return re.sub(r"[^a-z0-9]+", " ", t).strip()
+
+
+def parse_feed(xml_bytes, series_hint=None):
+    root = ET.fromstring(xml_bytes)
+    items = []
+    for it in root.iter("item"):
+        body = _text(it, "content:encoded", NS) or _text(it, "description")
+        plain = strip_html(body)
+        enc = it.find("enclosure")
+        img = enc.get("url") if enc is not None and enc.get("url") else ""
+        if not img:
+            m = re.search(r'<img[^>]+src=["\']([^"\']+)', body)
+            img = m.group(1) if m else ""
+        items.append({
+            "title": _text(it, "title"),
+            "date": to_iso(_text(it, "pubDate")),
+            "substack_url": _text(it, "link"),
+            "read_min": max(1, round(len(plain.split()) / 225)),
+            "image": img,
+            "author": _text(it, "dc:creator", NS),
+            "categories": [c.text.strip() for c in it.findall("category") if c.text],
+            "_series_hint": series_hint,
+            "_excerpt": plain[:200],
+        })
+    return items
+
+
+def gather(series_defs):
+    """Pull section feeds where they exist, then the main feed. Returns (items, sources)."""
+    items, seen, sources = [], set(), {}
+
+    for s in series_defs:
+        slug = SECTION_SLUGS.get(s["id"])
+        if not slug:
+            continue
+        try:
+            found = parse_feed(fetch(f"{PUBLICATION}/feed/s/{slug}"), series_hint=s["id"])
+        except Exception as e:
+            print(f"  note: section '{slug}' unreachable ({e.__class__.__name__}); using main feed",
+                  file=sys.stderr)
+            continue
+        if found:
+            sources[s["id"]] = f"section:{slug}"
+            for it in found:
+                if it["substack_url"] not in seen:
+                    seen.add(it["substack_url"])
+                    items.append(it)
+
+    for it in parse_feed(fetch(f"{PUBLICATION}/feed")):
+        if it["substack_url"] not in seen:
+            seen.add(it["substack_url"])
+            items.append(it)
+    sources.setdefault("_main", f"{PUBLICATION}/feed")
+    return items, sources
+
+
+# Hand overrides for posts the feed can't classify, until Substack sections exist.
+# Key on any distinctive fragment of the title (case-insensitive).
+TITLE_OVERRIDES = {
+    "not a microgrid": "clearsync-connect",
+}
+
+
+def assign_series(item, series_defs, default_series=None):
+    """Section hint > explicit override > series name in title/categories > default."""
+    if item.get("_series_hint"):
+        return item["_series_hint"]
+
+    title_l = item["title"].lower()
+    for frag, sid in TITLE_OVERRIDES.items():
+        if frag in title_l:
+            return sid
+
+    hay = " ".join([item["title"]] + item["categories"]).lower()
+    for s in series_defs:
+        if s["name"].lower() in hay or s["id"].replace("-", " ") in hay:
+            return s["id"]
+
+    return default_series
+
+
+# ---------- merge ----------
+
+def next_id(series_id, existing):
+    prefix = "".join(w[0] for w in series_id.split("-"))[:3] or "art"
+    used = [int(m.group(1)) for a in existing
+            if (m := re.match(rf"^{re.escape(prefix)}-(\d+)$", a.get("id", "")))]
+    return f"{prefix}-{max(used, default=0) + 1:03d}"
+
+
+def merge(doc, items, prune_demo=False, default_series=None):
+    series_defs = doc.get("series", [])
+    articles = doc.get("articles", [])
+    valid_ids = {s["id"] for s in series_defs}
+
+    by_url = {a["substack_url"]: a for a in articles
+              if a.get("substack_url") and a["substack_url"] not in DEMO_URLS}
+    by_title = {norm_title(a.get("title", "")): a for a in articles if a.get("title")}
+
+    report = {"updated": [], "added": [], "unmatched_series": [], "demo_left": []}
+
+    for item in items:
+        sid = assign_series(item, series_defs, default_series)
+        if sid not in valid_ids:
+            report["unmatched_series"].append(item["title"])
+            continue
+
+        row = by_url.get(item["substack_url"]) or by_title.get(norm_title(item["title"]))
+
+        if row is not None:
+            # display_title tracks the feed until a human customizes it
+            untouched = row.get("display_title", row.get("title")) == row.get("title")
+            changed = [f for f in RSS_OWNED
+                       if f in item and item[f] and row.get(f) != item[f]]
+            for f in changed:
+                row[f] = item[f]
+            if untouched:
+                row["display_title"] = item["title"]
+            else:
+                row.setdefault("display_title", item["title"])
+            row["series_id"] = sid
+            row.setdefault("paired_episode_id", "")
+            row.pop("needs_editorial", None) if row.get("one_liner") else None
+            if changed:
+                report["updated"].append((row["id"], item["title"], changed))
+            by_url[item["substack_url"]] = row
+        else:
+            new = {
+                "id": next_id(sid, articles),
+                "series_id": sid,
+                "title": item["title"],
+                "display_title": item["title"],
+                "one_liner": "",
+                "summary_bullets": [],
+                "date": item["date"],
+                "read_min": item["read_min"],
+                "verticals": next((s.get("verticals", [])[:2] for s in series_defs
+                                   if s["id"] == sid), []),
+                "substack_url": item["substack_url"],
+                "image": item["image"],
+                "thumb_label": "".join(w[0] for w in sid.split("-")).upper()[:2],
+                "start_here": False,
+                "featured": False,
+                "paired_episode_id": "",
+                "needs_editorial": True,
+                "_excerpt": item["_excerpt"],
+            }
+            articles.append(new)
+            by_url[item["substack_url"]] = new
+            report["added"].append((new["id"], item["title"]))
+
+    for a in articles:
+        t = (a.get("title") or "").lower()
+        for frag, flags in CURATION.items():
+            if frag in t:
+                a.update(flags)
+
+    live_urls = {i["substack_url"] for i in items}
+    demo = [a for a in articles
+            if a.get("substack_url") in DEMO_URLS or a.get("substack_url") not in live_urls]
+    if prune_demo:
+        keep = [a for a in articles if a not in demo]
+        report["demo_left"] = [(a["id"], a.get("title", "")) for a in demo]
+        articles = keep
+    else:
+        report["demo_left"] = [(a["id"], a.get("title", "")) for a in demo]
+
+    # series-level freshness + real publication home
+    for s in series_defs:
+        mine = [a for a in articles if a.get("series_id") == s["id"] and a.get("date")]
+        if mine:
+            s["updated"] = max(a["date"] for a in mine)
+        if s.get("substack_home") in DEMO_URLS:
+            s["substack_home"] = PUBLICATION
+
+    articles.sort(key=lambda a: (a.get("date") or "", a.get("id")), reverse=True)
+    doc["articles"] = articles
+    doc.setdefault("meta", {})["generated"] = datetime.now(timezone.utc).isoformat()
+    doc["meta"]["publication"] = PUBLICATION
+    return doc, report
+
+
+# ---------- cli ----------
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--path", default=DEFAULT_PATH)
+    ap.add_argument("--inspect", action="store_true", help="report only; write nothing")
+    ap.add_argument("--prune-demo", action="store_true",
+                    help="remove rows with no matching live post")
+    ap.add_argument("--default-series",
+                    help="series_id for posts the feed can't classify "
+                         "(bridge until Substack sections exist)")
+    args = ap.parse_args()
+
+    with open(args.path, encoding="utf-8") as f:
+        doc = json.load(f)
+
+    items, sources = gather(doc.get("series", []))
+    print(f"feed: {len(items)} live posts")
+    for k, v in sources.items():
+        print(f"  {k:20} <- {v}")
+
+    doc, rep = merge(doc, items, prune_demo=args.prune_demo,
+                     default_series=args.default_series)
+
+    print(f"\nupdated : {len(rep['updated'])}")
+    for i, t, ch in rep["updated"]:
+        print(f"  {i}  {t[:48]:50} {','.join(ch)}")
+    print(f"added   : {len(rep['added'])}   (need editorial copy)")
+    for i, t in rep["added"]:
+        print(f"  {i}  {t[:60]}")
+    if rep["unmatched_series"]:
+        print(f"\nno series match ({len(rep['unmatched_series'])}) - check sections/tags:")
+        for t in rep["unmatched_series"]:
+            print(f"  {t[:70]}")
+    if rep["demo_left"]:
+        label = "pruned" if args.prune_demo else "still placeholder (use --prune-demo to drop)"
+        print(f"\n{label}: {len(rep['demo_left'])}")
+        for i, t in rep["demo_left"]:
+            print(f"  {i}  {t[:60]}")
+
+    if args.inspect:
+        print("\n--inspect: nothing written.")
+        return
+
+    shutil.copyfile(args.path, args.path + ".bak")
+    with open(args.path, "w", encoding="utf-8") as f:
+        json.dump(doc, f, indent=1, ensure_ascii=False)
+    print(f"\nwrote {args.path} ({len(doc['articles'])} articles); backup at {args.path}.bak")
+
+
+if __name__ == "__main__":
+    main()

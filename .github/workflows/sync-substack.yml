@@ -1,0 +1,53 @@
+name: Sync Substack -> series.json
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every 6 hours
+  workflow_dispatch:
+    inputs:
+      prune_demo:
+        description: "Drop placeholder rows with no matching live post"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Merge live feed into series.json
+        run: |
+          python3 sync_series.py \
+            --default-series desert-capital \
+            ${{ github.event.inputs.prune_demo == 'true' && '--prune-demo' || '' }} \
+            | tee sync-report.txt
+
+      - name: Summary
+        run: |
+          {
+            echo '## Substack sync'
+            echo '```'
+            cat sync-report.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit if changed
+        run: |
+          rm -f series.json.bak sync-report.txt
+          if git diff --quiet -- series.json; then
+            echo "No change."
+            exit 0
+          fi
+          git config user.name  "ud-insights-bot"
+          git config user.email "actions@github.com"
+          git add series.json
+          git commit -m "chore: sync series.json from Substack feed"
+          git push
