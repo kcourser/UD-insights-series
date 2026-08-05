@@ -35,9 +35,9 @@ cd "$REPO"
 } >> "$LOG" 2>&1
 
 # ---------------------------------------------------------------------------
-# To run automatically every day at 8:15am, run `crontab -e` and add:
+# To run automatically every Wednesday at 8:15am, run `crontab -e` and add:
 #
-# 15 8 * * * "/Users/kevin/Library/CloudStorage/OneDrive-UprightDigital/Podcasts/PODCAST SHOWS/Transcript Files - Github/UD-insights-series/run-sync.sh"
+# 15 8 * * 3 "/Users/kevin/Library/CloudStorage/OneDrive-UprightDigital/Podcasts/PODCAST SHOWS/Transcript Files - Github/UD-insights-series/run-sync.sh"
 #
 # Requires the Mac to be awake. Check results with:  tail -20 sync.log
 # ---------------------------------------------------------------------------
