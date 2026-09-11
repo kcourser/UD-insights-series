@@ -139,3 +139,19 @@ done and keeps refreshing weekly regardless of what renders it.
   closest public energy analyst is Osama Rizvi. Confirm before it ships.
 - The GitHub Action (`.github/workflows/sync-substack.yml`) is retained with
   `workflow_dispatch` only; its schedule was removed since scheduled runs always 403.
+
+## Deferred — image editing UX (future version)
+
+**Status:** **TABLED** (2026-09-11) — Kevin. Not in current ship scope.
+
+**Problem:** Embed is script-driven; images cannot be edited inside Webflow like native CMS cards.
+
+**Options considered (not chosen for v1):**
+1. Host article/series data as Webflow Collections (visual edit; heavier CMS ownership)
+2. Lightweight admin UI for `display_image` overrides
+3. Scripted path: RSS `image` + optional human `display_image` in `series.json` (sheet/JSON only)
+
+**v1 posture:** Use Substack cover URLs from sync as-is; no Webflow-side image editor. Revisit image override UX in a **future version** after interactive rail is on-brand and live.
+
+**Related:** design-system inherit (`--ud-*` / `ud-card` / `ud-btn`) still open per this handoff; image admin is explicitly out of band until un-tabled.
+
