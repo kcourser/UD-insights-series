@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-08-05T20:25:27.080459+00:00",
+  "generated": "2026-11-04T13:57:20.281102+00:00",
   "brand": "UPRT+",
   "title": "Article series",
   "subtitle": "Programmed coverage across oil & gas, power, and data — full reads on Substack",
@@ -30,7 +30,7 @@
    ],
    "accent": "#FF3DB0",
    "substack_home": "https://uprightdigital.substack.com",
-   "updated": "2026-08-04"
+   "updated": "2026-10-30"
   },
   {
    "id": "clearsync-connect",
@@ -48,10 +48,340 @@
    ],
    "accent": "#4DA9F0",
    "substack_home": "https://uprightdigital.substack.com",
-   "updated": "2026-07-29"
+   "updated": "2026-07-14"
   }
  ],
  "articles": [
+  {
+   "id": "dc-023",
+   "series_id": "desert-capital",
+   "title": "ADIPEC Curtain Raiser",
+   "display_title": "ADIPEC Curtain Raiser",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-10-30",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/adipec-curtain-raiser",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/5035d809-69af-457d-8293-713443b9117b_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "Without quotas, the UAE’s pitch rests on barrels it can now produce, a second route to market, and gas bought far from home. The UAE spent a decade building oil capacity it could not fully use. Its cr"
+  },
+  {
+   "id": "dc-024",
+   "series_id": "desert-capital",
+   "title": "Pakistan’s Power Sector: The Most Mispriced Restructuring in Asia",
+   "display_title": "Pakistan’s Power Sector: The Most Mispriced Restructuring in Asia",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-10-28",
+   "read_min": 6,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/pakistans-power-sector-the-most-mispriced",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/d55721ad-b468-40e5-8550-7fad7d632293_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "Pakistan restructured its power debt by charging every grid unit, then had to tax the exits to keep the units. Before any fuel is burned, a unit (kWh) of grid electricity in Pakistan carries Rs17.19 i"
+  },
+  {
+   "id": "dc-025",
+   "series_id": "desert-capital",
+   "title": "Sixteen Gigawatts on Paper",
+   "display_title": "Sixteen Gigawatts on Paper",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-10-27",
+   "read_min": 6,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/sixteen-gigawatts-on-paper",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/54c505bf-7752-4cc4-8ea5-9e537913ac67_5001x2625.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "Richard’s Take Sixteen gigawatts of data center capacity were slated to come online worldwide in 2026, most of it in the U.S. About five are under construction, mostly in the U.S. That gap is the stor"
+  },
+  {
+   "id": "dc-026",
+   "series_id": "desert-capital",
+   "title": "What Is the Next Front in the US-Israel War With Iran?",
+   "display_title": "What Is the Next Front in the US-Israel War With Iran?",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-10-20",
+   "read_min": 3,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/what-is-the-next-front-in-the-us",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/6074b263-0ad5-450e-a73a-b31db60e9e3a_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "As Gulf states bet on AI and cloud computing, the submarine cables beneath Hormuz are becoming part of the conflict. On October 19, 2026, Saudi Arabia postponed the Future Investment Initiative, the c"
+  },
+  {
+   "id": "dc-027",
+   "series_id": "desert-capital",
+   "title": "Renewable Capacity Is Not the Same as Reliable Power",
+   "display_title": "Renewable Capacity Is Not the Same as Reliable Power",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-10-16",
+   "read_min": 4,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/renewable-capacity-is-not-the-same",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/c74ea1ad-f775-4a95-a494-218a924a5d7b_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "India offers a revealing picture of the limits of energy targets. During July and August, an estimated 1.8 billion units of renewable electricity were curtailed , comprising approximately 1.46 billion"
+  },
+  {
+   "id": "dc-028",
+   "series_id": "desert-capital",
+   "title": "What Did the War Actually Cost South Asia?",
+   "display_title": "What Did the War Actually Cost South Asia?",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-10-12",
+   "read_min": 6,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/what-did-the-war-actually-cost-south",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/1366335c-4993-48d7-84a5-1c45673ac1b7_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "Pakistan’s unwanted LNG glut became its best buffer. Across South Asia, the war’s cost followed how much slack each economy had going in. Desert Capital spent its first two series following Gulf energ"
+  },
+  {
+   "id": "dc-029",
+   "series_id": "desert-capital",
+   "title": "Different Bets, Same War",
+   "display_title": "Different Bets, Same War",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-10-05",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/different-bets-same-war",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/b86772df-dd73-499d-82fc-6fe5864c830e_1280x720.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The Gulf Crisis Exposed Four Different Energy Strategies This is the last piece in Series 2 of Desert Capital. We started in April covering how the UAE held its energy infrastructure, its capital comm"
+  },
+  {
+   "id": "dc-030",
+   "series_id": "desert-capital",
+   "title": "The Cost of Optionality in Gulf Oil",
+   "display_title": "The Cost of Optionality in Gulf Oil",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-10-01",
+   "read_min": 3,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-cost-of-optionality-in-gulf-oil",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/75d7750e-beda-4105-b388-30af5f73a706_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "Gulf crude is back, but pressure remains. On September 30, Goldman Sachs estimated that Gulf oil exports had recovered to 23.3 million barrels a day, matching their 2025 average after doubling during "
+  },
+  {
+   "id": "dc-031",
+   "series_id": "desert-capital",
+   "title": "Who Moves First When a Gulf War Ends?",
+   "display_title": "Who Moves First When a Gulf War Ends?",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-09-21",
+   "read_min": 6,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/who-moves-first-when-a-gulf-war-ends",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/89d1395e-2b49-4450-b7a2-cd2a4d65f729_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The Real Constraints Behind Gulf Reconstruction When a war ends in the Gulf, the reconstruction announcements come fast. Every government holds a press conference. Every national oil company signals a"
+  },
+  {
+   "id": "dc-032",
+   "series_id": "desert-capital",
+   "title": "Saudi Arabia Shut Down Its East-West Pipeline. What Does It Mean for Crude Flows?",
+   "display_title": "Saudi Arabia Shut Down Its East-West Pipeline. What Does It Mean for Crude Flows?",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-09-16",
+   "read_min": 4,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/saudi-arabia-shut-down-its-east-west",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/349480a2-0d09-419e-9d64-ea718e811946_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "Saudi Arabia’s East-West Pipeline outage has moved beyond a precautionary logistics problem. By September 15, Yanbu loadings were suspended and Saudi Aramco had cancelled some late-September cargoes t"
+  },
+  {
+   "id": "dc-033",
+   "series_id": "desert-capital",
+   "title": "Why Oman Was the Gulf’s Quiet Winner",
+   "display_title": "Why Oman Was the Gulf’s Quiet Winner",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-09-09",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/why-oman-was-the-gulfs-quiet-winner",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/037f0008-f04d-498f-a71f-35c5e11f8724_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "Every piece in this series has been about the UAE. This one is about its neighbor and about why six months of conflict coverage somehow missed what may be the most instructive energy story in the Gulf"
+  },
+  {
+   "id": "dc-034",
+   "series_id": "desert-capital",
+   "title": "UAE Diesel Is Up 71 percent Since February, and This Weekend Did Not Help",
+   "display_title": "UAE Diesel Is Up 71 percent Since February, and This Weekend Did Not Help",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-09-08",
+   "read_min": 3,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/uae-diesel-is-up-71-percent-since",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/6f868c39-396d-44b3-bd99-77d6eadfaf27_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "UAE diesel now costs $1.17 a liter, or about $4.43 a gallon at the pump and Dh4.30 a liter at the fixed 3.6725 dirham peg. That is up 13.2 percent from August alone. Petrol has moved too: Super 98 ros"
+  },
+  {
+   "id": "dc-035",
+   "series_id": "desert-capital",
+   "title": "Why Are Gulf Sovereigns Betting on American Molecules?",
+   "display_title": "Why Are Gulf Sovereigns Betting on American Molecules?",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-08-25",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/why-are-gulf-sovereigns-betting-on",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/0b6f9edf-34d3-46b9-8f72-5512c8006a16_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The Pricing Advantage Gulf sovereign capital has been moving into American LNG infrastructure for two years. The thesis was simple: American gas is abundant, competitively priced, and can reach Asian "
+  },
+  {
+   "id": "dc-036",
+   "series_id": "desert-capital",
+   "title": "The Full Stack Integrators Will Win",
+   "display_title": "The Full Stack Integrators Will Win",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-08-13",
+   "read_min": 7,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/the-full-stack-integrators-will-win",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/20db6b89-ea90-432a-9f44-523472e51aa2_5001x2625.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The Missing Piece in the Energy Stack Six issues ago, I told you a megawatt isn’t a megawatt. Two issues later I told you a microgrid isn’t a grid unless something is deciding what happens on it. Then"
+  },
+  {
+   "id": "dc-037",
+   "series_id": "desert-capital",
+   "title": "Qatar’s Buyers Are Calling Everyone Except Qatar",
+   "display_title": "Qatar’s Buyers Are Calling Everyone Except Qatar",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-08-12",
+   "read_min": 5,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/qatars-buyers-are-calling-everyone",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/4311a1e9-9bcc-4740-ac12-d46a4649dbeb_2500x1313.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "The last piece in this series looked at where the oil price floor now sits. This one is about a different kind of shortage-the supply floor for LNG in a world where the facility that produces roughly "
+  },
   {
    "id": "dc-005",
    "series_id": "desert-capital",
@@ -79,7 +409,7 @@
   },
   {
    "id": "dc-006",
-   "series_id": "clearsync-connect",
+   "series_id": "desert-capital",
    "title": "The Permission Problem",
    "display_title": "The Permission Problem",
    "one_liner": "Chips, power, capital. There's a fourth input, and it's the one that stops projects.",
@@ -95,7 +425,7 @@
     "AI & Tech"
    ],
    "substack_url": "https://uprightdigital.substack.com/p/the-permission-problem",
-   "image": "https://substack-post-media.s3.amazonaws.com/public/images/b69fe1bf-fcb6-487a-9f3d-306b9c2b55a9_5000x2625.png",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/f5430116-c8ae-4aaa-b1b0-6b0d9058e30f_5001x2625.png",
    "thumb_label": "CC",
    "start_here": false,
    "featured": false,
