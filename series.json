@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-05T05:45:07.597912+00:00",
+  "generated": "2026-11-13T14:10:55.440902+00:00",
   "brand": "UPRT+",
   "title": "Article series",
   "subtitle": "Programmed coverage across oil & gas, power, and data — full reads on Substack",
@@ -30,7 +30,7 @@
    ],
    "accent": "#FF3DB0",
    "substack_home": "https://uprightdigital.substack.com",
-   "updated": "2026-10-30"
+   "updated": "2026-11-11"
   },
   {
    "id": "clearsync-connect",
@@ -52,6 +52,28 @@
   }
  ],
  "articles": [
+  {
+   "id": "dc-038",
+   "series_id": "desert-capital",
+   "title": "What Was ADIPEC 2026 Really About?",
+   "display_title": "What Was ADIPEC 2026 Really About?",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-11-11",
+   "read_min": 6,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/what-was-adipec-2026-really-about",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/ba3b5d78-805f-415f-87d8-68afb80f697f_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "A record crowd, AI on the floor, a UAE free of quotas, and a new focus on storage and infrastructure built to keep working under pressure. Insights into a new market. Many expected the war to keep peo"
+  },
   {
    "id": "dc-023",
    "series_id": "desert-capital",
