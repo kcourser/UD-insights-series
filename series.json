@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-16T05:29:09.674547+00:00",
+  "generated": "2026-11-19T00:00:37.173506+00:00",
   "brand": "UPRT+",
   "title": "Article series",
   "subtitle": "Programmed coverage across oil & gas, power, and data — full reads on Substack",
@@ -30,7 +30,7 @@
    ],
    "accent": "#FF3DB0",
    "substack_home": "https://uprightdigital.substack.com",
-   "updated": "2026-11-11"
+   "updated": "2026-11-17"
   },
   {
    "id": "clearsync-connect",
@@ -52,6 +52,28 @@
   }
  ],
  "articles": [
+  {
+   "id": "dc-039",
+   "series_id": "desert-capital",
+   "title": "Can ADNOC Feed AI and Still Sell Its Gas?",
+   "display_title": "Can ADNOC Feed AI and Still Sell Its Gas?",
+   "one_liner": "",
+   "summary_bullets": [],
+   "date": "2026-11-17",
+   "read_min": 3,
+   "verticals": [
+    "Oil & Gas",
+    "Middle East"
+   ],
+   "substack_url": "https://uprightdigital.substack.com/p/can-adnoc-feed-ai-and-still-sell",
+   "image": "https://substack-post-media.s3.amazonaws.com/public/images/48ca57c0-6cbf-4056-b6ee-ac525cbde7f1_5000x2626.png",
+   "thumb_label": "DC",
+   "start_here": false,
+   "featured": false,
+   "paired_episode_id": "",
+   "needs_editorial": true,
+   "_excerpt": "At its ADIPEC stand, ADNOC laid out how AI will help it produce more. The same numbers show how much of that gas AI could consume at home. The first thing I read at ADNOC’s stand at ADIPEC was a promi"
+  },
   {
    "id": "dc-038",
    "series_id": "desert-capital",
